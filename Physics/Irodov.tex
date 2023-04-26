@@ -1,32 +1,14 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath, amsfonts, amssymb}
-\usepackage{physics, tensor}
-\usepackage{mathtools}
-\usepackage{graphicx}
+\usepackage{MyMacros}
 
-% Formatting
-\usepackage[margin=1in]{geometry}
-\usepackage{fancyhdr, enumitem} 
-\pagestyle{fancy}
-\setlength{\headheight}{15pt}
-\setlength{\parindent}{0pt}
-
-% Table of contents hyperlink setup
+% Table of contents hyperlink setup, needs to be separate for some reason
 \usepackage{hyperref}
 \hypersetup{
  colorlinks,
  linkcolor=blue
 }
 
-% Custom environments
-\usepackage{amsthm, thmtools}
-\usepackage{mdframed}
-\declaretheoremstyle[
-    spaceabove=12pt, spacebelow=12pt
-]{exercise}
-\declaretheorem[style=exercise]{exercise}
-
-% Macros
+\usepackage{parskip}
 
 \begin{document}
 
@@ -35,6 +17,43 @@
 \maketitle
 \tableofcontents
 
-\include{Chapter 1}
+\newpage 
+
+\section{Introduction}
+These are my solutions to every problem in Igor Irodov's \emph{Problem in General Physics} as part of my efforts to prepare for graduate studies in physics. They are organized according to the sections given in the book. Irodov provides some hints (moreso guidance) at the beginning of the book which I will rehash here as I will make every effort to follow this paradigm for each problem:
+\begin{itemize}
+	\item Being each problem by recognizing its meaning and the data needed to arrive at an answer. Missing data may be found in the reference tables he provides in the appendices. Start each problem by drawing a diagram, if possible, "elucidating the essence of the problem."
+	\item Solve each problem in the general form, that is, in letter notation. Verify that this solution has the correct dimensions as expected for the problem and, if possible, investigate its behavior in certain extreme cases (he provides the example that gravitational force between two bodies must turn into the well known law of gravitational attraction as length approaches infinity).
+	\item When starting the final numerical calculation, keep in mind that physical quantities are always approximate. Adhere to the proper rules when operating with approximations and pay attention to numerical accuracy. When a final numerical answer is achieved, evaluate its plausibility (i.e. velocity should not surpass the speed of light).
+\end{itemize}
+
+\subsection{Notation and Conventions}
+The notation in this book is a mix of Irodov's and my own. In particular there are a few conventions that he adopts that I am not familiar with (i.e. $w$ for acceleration), so I will use the notation that I am familiar with in place of those. The beginning of each subsection will include formulas defined the way I use them to make any differences in notation/convention clear. Additional conventions are listed in this subsection. 
+
+All vectors will be written using boldface, e.g. $\vec x, \vec F$, and their magnitudes written in normal italics, e.g. $r = \abs{\vec r}$. The unit vectors are:
+\begin{itemize}
+	\item $\vec i, \vec j, \vec k$ in Cartesian coordinates
+	\item $\vec \rho, \vec \theta, \vec phi$ in spherical coordinates ($\phi$ is azimuthal)
+\end{itemize}
+The normal and tangential components of a vector will be denote $\vec x_n, \vec x_t$ respectively. 
+
+Differences are denoted in one of three ways:
+\begin{itemize}
+	\item $\Delta$ denotes a finite difference, e.g. $\Delta x = x_2 - x_1$
+	\item $d$ denotes an infinitesimal increment, e.g. $dr$
+	\item $\delta$ denotes an elementary value, e.g. $\delta W$ the elementary work\footnote{I have not seen the term elementary value used before. From looking up the work example, I believe this is close enough to the more familiar concept of variation for which $\delta$ usually denotes.}
+\end{itemize}
+
+The time derivative is denoted, in typical physics fashion, with a dot over the variable, e.g. $\vec v \equiv \dot{\vec x}$. The three vector operations are denoted using a nabla:
+\begin{itemize}
+	\item $\grad \phi$ the gradient of a potential function $\phi$
+	\item $\div \vec E$ the divergence of a vector field $\vec E$
+	\item $\curl \vec E$ the curl of a vector field $\vec E$
+\end{itemize}
+
+Integrals of any multiplicity will all use a single sign $\int$ and will be distinguished only by the integrating element: $dx$ or $d\vec x, d\vec S, dV$ for line, surface, and volume integrals respectively. An integral over a closed surface or loop will be denoted with the sign $\oint$.
+
+\include{Chapter 1.1}
+% \include{Chapter 1.2}
 
 \end{document}

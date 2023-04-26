@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  23 APR 2023 02:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  25 APR 2023 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,6 +23,7 @@ File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
+(MyMacros.sty
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
@@ -101,6 +102,29 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
+Package: physics 
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpa
+rse.sty
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2023-03-30 L3 programming layer (loader) 
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
+dftex.def
+File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count271
+\l__pdf_internal_box=\box53
+))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+))
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/tensor\tensor.sty
+Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
+\tnsr@Sps=\toks21
+\tnsr@Sbs=\toks22
+\tnsr@Spe=\toks23
+\tnsr@Sbe=\toks24
+\ncld@Mno=\toks25
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.s
 ty
@@ -108,25 +132,25 @@ Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks26
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count271
-\calc@Bcount=\count272
+\calc@Acount=\count272
+\calc@Bcount=\count273
 \calc@Adimen=\dimen150
 \calc@Bdimen=\dimen151
 \calc@Askip=\skip53
 \calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count273
+\calc@Ccount=\count274
 \calc@Cskip=\skip55
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count274
+\g_MT_multlinerow_int=\count275
 \l_MT_multwidth_dim=\dimen152
 \origjot=\skip56
 \l_MT_shortvdotswithinadjustabove_dim=\dimen153
@@ -135,8 +159,13 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_intertext_sep=\dimen156
 \l_MT_above_shortintertext_sep=\dimen157
 \l_MT_below_shortintertext_sep=\dimen158
-\xmathstrut@box=\box53
+\xmathstrut@box=\box54
 \xmathstrut@dim=\dimen159
+) (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/base\latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -158,30 +187,6 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
-Package: physics 
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpa
-rse.sty
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2023-03-30 L3 programming layer (loader) 
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
-dftex.def
-File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count275
-\l__pdf_internal_box=\box54
-))
-Package: xparse 2023-02-02 L3 Experimental document command parser
-))
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/tensor\tensor.sty
-Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
-\tnsr@Sps=\toks22
-\tnsr@Sbs=\toks23
-\tnsr@Spe=\toks24
-\tnsr@Sbe=\toks25
-\ncld@Mno=\toks26
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -227,175 +232,22 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box55
 \enit@count@id=\count279
 \enitdp@description=\count280
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
-ds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
-.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
-ty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
-nekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
-.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmac
-ro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
-itlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
-ty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count281
-)
-\@linkdim=\dimen171
-\Hy@linkcounter=\count282
-\Hy@pagecounter=\count283
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
-ty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count284
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
-)
-Package hyperref Info: Hyper figures OFF on input line 4177.
-Package hyperref Info: Link nesting OFF on input line 4182.
-Package hyperref Info: Hyper index ON on input line 4185.
-Package hyperref Info: Plain pages OFF on input line 4192.
-Package hyperref Info: Backreferencing OFF on input line 4197.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count285
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen172
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintca
-lc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
-))
-\Fld@menulength=\count286
-\Field@Width=\dimen173
-\Fld@charsize=\dimen174
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)
-\Hy@abspage=\count287
-\c@Item=\count288
-\c@Hfootnote=\count289
-)
-Package hyperref Info: Driver (autodetected): hpdftex.
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.st
-y
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
-with kernel methods
-)
-\Fld@listcount=\count290
-\c@bookmark@seq@number=\count291
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
-ilecheck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqu
-ecounter.sty
-Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
-)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-85.
-)
-\Hy@SectionHShift=\skip67
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 22.
-
-(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+) (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks29
 \thm@bodyfont=\toks30
 \thm@headfont=\toks31
 \thm@notefont=\toks32
 \thm@headpunct=\toks33
-\thm@preskip=\skip68
-\thm@postskip=\skip69
-\thm@headsep=\skip70
+\thm@preskip=\skip67
+\thm@postskip=\skip68
+\thm@headsep=\skip69
 \dth@everypar=\toks34
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/thmtools\thmtools.sty
 Package: thmtools 2023/02/17 v0.75
 \thmt@toks=\toks35
-\c@thmt@dummyctr=\count292
+\c@thmt@dummyctr=\count281
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/thmtools\thm-patch.st
 y
@@ -409,6 +261,11 @@ Package: parseargs 2023/02/17 v0.75
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/thmtools\thm-kv.sty
 Package: thm-kv 2023/02/17 v0.75
 Package thm-kv Info: Theorem names will be uppercased on input line 42.
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
+ty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
 Package thm-kv Info: kvsetkeys patch (v1.16 or later) on input line 158.
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/thmtools\thm-autoref.
@@ -434,19 +291,54 @@ Package: thm-amsthm 2023/02/17 v0.75
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+))
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count293
+\etb@tempcnta=\count282
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
 Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
 Package: zref-base 2022-04-07 v2.34 Module base for zref (HO)
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
+.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
+ds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
+ty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
 Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count294
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\c@abspage=\count283
 Package zref Info: New property: abspage on input line 65.
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.s
@@ -464,47 +356,47 @@ Package color Info: Driver file: pdftex.def on input line 149.
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.lt
 x))
-\mdf@templength=\skip71
-\c@mdf@globalstyle@cnt=\count295
-\mdf@skipabove@length=\skip72
-\mdf@skipbelow@length=\skip73
-\mdf@leftmargin@length=\skip74
-\mdf@rightmargin@length=\skip75
-\mdf@innerleftmargin@length=\skip76
-\mdf@innerrightmargin@length=\skip77
-\mdf@innertopmargin@length=\skip78
-\mdf@innerbottommargin@length=\skip79
-\mdf@splittopskip@length=\skip80
-\mdf@splitbottomskip@length=\skip81
-\mdf@outermargin@length=\skip82
-\mdf@innermargin@length=\skip83
-\mdf@linewidth@length=\skip84
-\mdf@innerlinewidth@length=\skip85
-\mdf@middlelinewidth@length=\skip86
-\mdf@outerlinewidth@length=\skip87
-\mdf@roundcorner@length=\skip88
-\mdf@footenotedistance@length=\skip89
-\mdf@userdefinedwidth@length=\skip90
-\mdf@needspace@length=\skip91
-\mdf@frametitleaboveskip@length=\skip92
-\mdf@frametitlebelowskip@length=\skip93
-\mdf@frametitlerulewidth@length=\skip94
-\mdf@frametitleleftmargin@length=\skip95
-\mdf@frametitlerightmargin@length=\skip96
-\mdf@shadowsize@length=\skip97
-\mdf@extratopheight@length=\skip98
-\mdf@subtitleabovelinewidth@length=\skip99
-\mdf@subtitlebelowlinewidth@length=\skip100
-\mdf@subtitleaboveskip@length=\skip101
-\mdf@subtitlebelowskip@length=\skip102
-\mdf@subtitleinneraboveskip@length=\skip103
-\mdf@subtitleinnerbelowskip@length=\skip104
-\mdf@subsubtitleabovelinewidth@length=\skip105
-\mdf@subsubtitlebelowlinewidth@length=\skip106
-\mdf@subsubtitleaboveskip@length=\skip107
-\mdf@subsubtitlebelowskip@length=\skip108
-\mdf@subsubtitleinneraboveskip@length=\skip109
-\mdf@subsubtitleinnerbelowskip@length=\skip110
+\mdf@templength=\skip70
+\c@mdf@globalstyle@cnt=\count284
+\mdf@skipabove@length=\skip71
+\mdf@skipbelow@length=\skip72
+\mdf@leftmargin@length=\skip73
+\mdf@rightmargin@length=\skip74
+\mdf@innerleftmargin@length=\skip75
+\mdf@innerrightmargin@length=\skip76
+\mdf@innertopmargin@length=\skip77
+\mdf@innerbottommargin@length=\skip78
+\mdf@splittopskip@length=\skip79
+\mdf@splitbottomskip@length=\skip80
+\mdf@outermargin@length=\skip81
+\mdf@innermargin@length=\skip82
+\mdf@linewidth@length=\skip83
+\mdf@innerlinewidth@length=\skip84
+\mdf@middlelinewidth@length=\skip85
+\mdf@outerlinewidth@length=\skip86
+\mdf@roundcorner@length=\skip87
+\mdf@footenotedistance@length=\skip88
+\mdf@userdefinedwidth@length=\skip89
+\mdf@needspace@length=\skip90
+\mdf@frametitleaboveskip@length=\skip91
+\mdf@frametitlebelowskip@length=\skip92
+\mdf@frametitlerulewidth@length=\skip93
+\mdf@frametitleleftmargin@length=\skip94
+\mdf@frametitlerightmargin@length=\skip95
+\mdf@shadowsize@length=\skip96
+\mdf@extratopheight@length=\skip97
+\mdf@subtitleabovelinewidth@length=\skip98
+\mdf@subtitlebelowlinewidth@length=\skip99
+\mdf@subtitleaboveskip@length=\skip100
+\mdf@subtitlebelowskip@length=\skip101
+\mdf@subtitleinneraboveskip@length=\skip102
+\mdf@subtitleinnerbelowskip@length=\skip103
+\mdf@subsubtitleabovelinewidth@length=\skip104
+\mdf@subsubtitlebelowlinewidth@length=\skip105
+\mdf@subsubtitleaboveskip@length=\skip106
+\mdf@subsubtitlebelowskip@length=\skip107
+\mdf@subsubtitleinneraboveskip@length=\skip108
+\mdf@subsubtitleinnerbelowskip@length=\skip109
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.m
 df
@@ -515,82 +407,199 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@splitbox@one=\box58
 \mdf@splitbox@two=\box59
 \mdf@splitbox@save=\box60
-\mdfsplitboxwidth=\skip111
-\mdfsplitboxtotalwidth=\skip112
-\mdfsplitboxheight=\skip113
-\mdfsplitboxdepth=\skip114
-\mdfsplitboxtotalheight=\skip115
-\mdfframetitleboxwidth=\skip116
-\mdfframetitleboxtotalwidth=\skip117
-\mdfframetitleboxheight=\skip118
-\mdfframetitleboxdepth=\skip119
-\mdfframetitleboxtotalheight=\skip120
-\mdffootnoteboxwidth=\skip121
-\mdffootnoteboxtotalwidth=\skip122
-\mdffootnoteboxheight=\skip123
-\mdffootnoteboxdepth=\skip124
-\mdffootnoteboxtotalheight=\skip125
-\mdftotallinewidth=\skip126
-\mdfboundingboxwidth=\skip127
-\mdfboundingboxtotalwidth=\skip128
-\mdfboundingboxheight=\skip129
-\mdfboundingboxdepth=\skip130
-\mdfboundingboxtotalheight=\skip131
-\mdf@freevspace@length=\skip132
-\mdf@horizontalwidthofbox@length=\skip133
-\mdf@verticalmarginwhole@length=\skip134
-\mdf@horizontalspaceofbox=\skip135
-\mdfsubtitleheight=\skip136
-\mdfsubsubtitleheight=\skip137
-\c@mdfcountframes=\count296
+\mdfsplitboxwidth=\skip110
+\mdfsplitboxtotalwidth=\skip111
+\mdfsplitboxheight=\skip112
+\mdfsplitboxdepth=\skip113
+\mdfsplitboxtotalheight=\skip114
+\mdfframetitleboxwidth=\skip115
+\mdfframetitleboxtotalwidth=\skip116
+\mdfframetitleboxheight=\skip117
+\mdfframetitleboxdepth=\skip118
+\mdfframetitleboxtotalheight=\skip119
+\mdffootnoteboxwidth=\skip120
+\mdffootnoteboxtotalwidth=\skip121
+\mdffootnoteboxheight=\skip122
+\mdffootnoteboxdepth=\skip123
+\mdffootnoteboxtotalheight=\skip124
+\mdftotallinewidth=\skip125
+\mdfboundingboxwidth=\skip126
+\mdfboundingboxtotalwidth=\skip127
+\mdfboundingboxheight=\skip128
+\mdfboundingboxdepth=\skip129
+\mdfboundingboxtotalheight=\skip130
+\mdf@freevspace@length=\skip131
+\mdf@horizontalwidthofbox@length=\skip132
+\mdf@verticalmarginwhole@length=\skip133
+\mdf@horizontalspaceofbox=\skip134
+\mdfsubtitleheight=\skip135
+\mdfsubsubtitleheight=\skip136
+\c@mdfcountframes=\count285
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count297
-\c@mdf@env@i=\count298
-\c@mdf@env@ii=\count299
-\c@mdf@zref@counter=\count300
+\mdf@envdepth=\count286
+\c@mdf@env@i=\count287
+\c@mdf@env@ii=\count288
+\c@mdf@zref@counter=\count289
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-\c@exercise=\count301
- (D:\Documents\TexMaker\Physics\build\Irodov.aux
-(D:\Documents\TexMaker\Physics\build\Chapter 1.aux))
+\c@exercise=\count290
+Package: MyMacros Will's Macros
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
+.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmac
+ro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
+itlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count291
+)
+\@linkdim=\dimen171
+\Hy@linkcounter=\count292
+\Hy@pagecounter=\count293
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count294
+ (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count295
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen172
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintca
+lc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count296
+\Field@Width=\dimen173
+\Fld@charsize=\dimen174
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+\Hy@abspage=\count297
+\c@Item=\count298
+\c@Hfootnote=\count299
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.st
+y
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\HyAnn@Count=\count300
+\Fld@listcount=\count301
+\c@bookmark@seq@number=\count302
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
+ilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqu
+ecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip137
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 9.
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+)
+(D:\Documents\TexMaker\Physics\build\Irodov.aux
+(D:\Documents\TexMaker\Physics\build\Chapter 1.1.aux)
+(D:\Documents\TexMaker\Physics\build\Chapter 1.2.aux))
 \openout1 = `Irodov.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count302
+\scratchcounter=\count303
 \scratchdimen=\dimen175
 \scratchbox=\box61
-\nofMPsegments=\count303
-\nofMParguments=\count304
+\nofMPsegments=\count304
+\nofMParguments=\count305
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count305
+\MPscratchCnt=\count306
 \MPscratchDim=\dimen176
-\MPnumerator=\count306
-\makeMPintoPDFobject=\count307
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
 \everyMPtoPDFconversion=\toks39
 )
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
@@ -637,23 +646,29 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 33.
+Package hyperref Info: Link coloring ON on input line 13.
 (D:\Documents\TexMaker\Physics\build\Irodov.out)
 (D:\Documents\TexMaker\Physics\build\Irodov.out)
 \@outlinefile=\write3
 \openout3 = `Irodov.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
 
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
 
 
 (C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 18
+.
+
+(C:\Users\William\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 (D:\Documents\TexMaker\Physics\build\Irodov.toc)
 \tf@toc=\write4
@@ -661,37 +676,66 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [1
 
-{C:/Users/William/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-\openout2 = `"Chapter 1.aux"'.
+{C:/Users/William/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 49.
+ [3]
+\openout2 = `"Chapter 1.1.aux"'.
 
- (Chapter 1.tex
+ (Chapter 1.1.tex
 Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
-ut line 5.
-) [2
+ut line 22.
+ [4
 
-]
-(D:\Documents\TexMaker\Physics\build\Irodov.aux
-(D:\Documents\TexMaker\Physics\build\Chapter 1.aux))
-Package rerunfilecheck Info: File `Irodov.out' has not changed.
-(rerunfilecheck)             Checksum: 88A63537DDA17A2DE5757782C0AC5866;185.
+] [5]
+[6]) [7] (D:\Documents\TexMaker\Physics\build\Irodov.aux
+(D:\Documents\TexMaker\Physics\build\Chapter 1.1.aux))
+
+Package rerunfilecheck Warning: File `Irodov.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Irodov.out':
+(rerunfilecheck)             Before: 7880B3F0999CDBD0B0C96B895783156D;778
+(rerunfilecheck)             After:  4844703DD607BCC4C624BC8E7A6625C2;615.
  ) 
 Here is how much of TeX's memory you used:
- 13584 strings out of 476331
- 222411 string characters out of 5786821
- 1853660 words of memory out of 5000000
- 33788 multiletter control sequences out of 15000+600000
- 521402 words of font info for 67 fonts, out of 8000000 for 9000
+ 13865 strings out of 476331
+ 227721 string characters out of 5786821
+ 1861660 words of memory out of 5000000
+ 33916 multiletter control sequences out of 15000+600000
+ 526968 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,77p,471b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr12.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/William/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmsl12.pfb>
-Output written on D:\Documents\TexMaker\Physics\build\Irodov.pdf (2 pages, 5200
-8 bytes).
+ 91i,11n,91p,501b,562s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{subsection.2.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+ <C:\Users\William\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1200.pk><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmbsy10.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/William/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/William/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Willi
+am/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/U
+sers/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr17.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr6.pfb><C:/Users/William/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/William/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/William/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Willia
+m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
+sers/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti1
+2.pfb>
+Output written on D:\Documents\TexMaker\Physics\build\Irodov.pdf (7 pages, 2072
+81 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 131 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
