@@ -127,8 +127,6 @@ Thus we cannot conclude that a limit exists unless both the left- and right-hand
 	Since the two are not equal, the limit of $f(x)$ as $x$ approaches $0$ does not exist.
 \end{example}
 
-% =========================================================================
-% Infinite limits
 Sometimes we end up trying to do something illegal when we ``plug-and-chug," but that does not always mean the limit doesn't exist. In some cases infinity (or negative infinity) is a perfectly valid answer\footnote{Though it can be debated if these limits actually exist}. Identifying infinite limits requires a bit of brainpower. The process is similar to making a table of values but we don't actually do it. It's easiest to demonstrate with examples:
 
 \begin{example}
@@ -147,27 +145,190 @@ Sometimes we end up trying to do something illegal when we ``plug-and-chug," but
 The value of the limit is not the only place where infinity could exist, we may be interested in the behavior of the function as $x$ itself approach positive/negative infinity. Again, we demonstrate with an example:
 
 \begin{example}
-	•
+	Consider the function $f(x) = 1/x$ again. Suppose we want to know the limit as $x$ goes to infinity. To do this, we think about what happens as $x$ gets larger and larger. Clearly $f(x)$ would get smaller and smaller as the denominator grows, so
+	\[ \lim_{x \to \infty} f(x) = 0 \]
+	Similarly, we can show that
+	\[ \lim_{x \to -\infty} f(x) = 0 \]
 \end{example}
 
-% Finding asymptotes
-
-% Limits from graphs
-If we had a bit more help, for instance a graph of the function, it is a bit easier to evaluate the limit. A simple way is the place your pencil on the line 
+Limits with infinity gives us a way to find asymptotes without having to draw a graph.
+\begin{theorem}
+	Let $f(x)$ be a function and $a$ a real number. The line $x = a$ is a vertical asymptote if both one-sided limits are positive or negative infinity. In symbols
+	\[ \lim_{x \to a^-} f(x) = \pm \infty \qquad \lim_{x \to a^+} f(x) = \pm \infty \]
+	Note that this does not mean the limit itself is defined as we say in the case of $f(x) = 1/x$. 
+	
+	The line $y = a$ is a horizontal asymptote if the limit as $x$ goes to positive or negative infinity is $a$.
+	\[ \lim_{x \to -\infty} f(x) = a \qquad \text{ or } \qquad \lim_{x \to \infty} f(x) = a \]
+\end{theorem}
 
 \begin{example}
+	Let's find all asymptotes for the following function
+	\[ f(x) = \frac{1}{1 - x} + 3 \]
+	First we do the horizontal asymptotes
+	\[ \lim_{x \to -\infty} f(x) = \lim_{x \to \infty} f(x) = 3 \]
+	so $y = 3$ is a horizontal asymptote for this function.
+	
+	It's a bit harder to see the vertical asymptotes right away, but a good way to find them is to look for ``divide by zeros" and then evaluate the limits. In this case we consider $x = 1$
+	\[ \lim_{x \to 1^-} = \infty \qquad \lim_{x \to 1^+} = - \infty \]
+	Notice that the left handed limit is positive infinity this time. This is because when $x < 1$, the denominator is very small but positive. When dealing with infinities, it is very important to make sure you have the right one.
+\end{example}
+
+If we are given a graph of a function, we can evaluate limits visually by examining the behavior of the graph. For instance if we wanted to evaluate a left-handed limit, we can place our pencil a bit to the left of the point and trace the line up to that point. The height that we appear to be approaching is the limit. Remember: the limit is what the function appears to approaching, not what it actually is.\footnote{If it helps, you may think of limits as "It is not the destination that matters, but the journey"}
+
+\begin{example} 
+Consider the following graph of a function $f(x)$
 \begin{center}
 	\includegraphics[scale=1]{images/Figure 2.2.1.jpg}
 \end{center}
+
+At $x = -8$, we see that from the left and the right we are approaching the same value. The fact that $f(-8) = -3$ does not matter, the limits are
+\[ \lim_{x \to -8^-} f(x) = \lim_{x \to -8^+} f(x) = \lim_{x \to -8} f(x) = -6 \]
+
+At $x = -2$ the graph has different behavior depending on if we are on the left or right. If we trace the graph coming from the left, we will approach $y = -2$ and in fact this is also the value of $f(-2)$. If we come from the right then we go straight up to $+ \infty$. Thus
+\[ \lim_{x \to -2^-} f(x) = 3 \qquad \lim_{x \to -2^+} = \infty \qquad \lim_{x \to -2} = \varnothing \]
+
+The remaining two interesting points, $x = 6$ and $x = 10$, will be left as an exercise to the sufficiently motivated and astute reader.
 \end{example}
 
-% =========================================================================
-
 \newpage 
-\subsection{Limit Laws}
+\subsection{Techniques for Limits}
+
+Now that we've brute forced our way through a couple limits, it is time to find a way to use those previous results to evaluate new limits. A lot of these laws/rules may seem obvious but it is important to state them nonetheless.
+
+\begin{theorem}[Properties of Limits]
+	Let $f(x)$ and $g(x)$ be functions, $a$ a real number, and suppose $f,g$ have the following limits
+	\[ \lim_{x \to a} f(x) = L \qquad \lim_{x \to a} g(x) = M \]
+	
+	Then we have the following properties, let $c$ be a constant
+	\begin{align*}
+		\lim_{x \to a} f(x) \pm g(x) &= \lim_{x \to a} f(x) \pm \lim_{x \to a} g(x) = L \pm M \\
+		\lim_{x \to a} f(x)g(x) &= \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) = L \cdot M \\
+		\lim_{x \to a} cf(x) &= c \cdot \lim_{x \to a} f(x) = c \cdot L \\
+		\lim_{x \to a} \frac{f(x)}{g(x)} &= \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} = \frac{L}{M} \qquad \text{ if $M \neq 0$} \\
+		\lim_{x \to a} (f(x))^n &= \qty(\lim_{x \to a} f(x))^n = L^n \\
+		\lim_{x \to a} \sqrt[n]{f(x)} &= \sqrt[n]{\lim_{x \to a} f(x)} = \sqrt[n]{L}
+	\end{align*}
+	
+	The last result holds for all $x$ if $n$ is odd and all $x \geq 0$ if $n$ is even (these also happen to be the domains of $\sqrt[n]{x}$ for odd/even $n$).
+\end{theorem}
+
+These laws give the ``plug and chug" strategy a more mathematical reasoning. Since we know the two basic limits
+\[ \lim_{x \to a} c = c \qquad \lim_{x \to a} x = a \]
+we can use the limit laws to manipulate them into the function we are interested in. 
+
+\begin{example}
+	Consider the function
+	\[ f(x) = \frac{x^2 + 3x - 10}{x^3 - 2x} \]
+	
+	The using the basic limits, we can evaluate the limit
+	\[ \lim_{x \to 2} f(x) = \frac{2^2 + 3 \cdot 2 - 10}{2^3 - 2 \cdot 2} = \frac{0}{4} = 0 \]
+\end{example}
+
+It is worth noting that these laws all apply the one-sided limits as well.
+
+There are many tricks to evaluating limits, we'll cover a few of the most common ones in the ensuing exercises.
+\begin{example}
+	Consider the function
+	\[ f(x) = \frac{x^2 + 2x - 3}{x^2 - 1} \]
+	
+	If we tried to evaluate the limit as $x$ approaches 1, then we would end up dividing by zero. To avoid this we must first factor the top and bottom
+	\[ f(x) = \frac{(x + 3)(x - 1)}{(x + 1)(x - 1)} = \frac{x + 3}{x + 1} \]
+	Now we see that since a term cancels, we can use the limit laws to evaluate
+	\[ \lim_{x \to 1} f(x) = \frac{1 + 3}{1 + 1} = 2 \]
+\end{example}
+
+\begin{example}
+	When working with square roots it is common to get a function of the form
+	\[ f(x) = \frac{\sqrt{x + 1} - 1}{x} \]
+	
+	If we tried to evaluate the limit as $x$ approaches 0 it would appear to seem that we are stuck. Furthermore there is nothing to factor, so what is there left to do? It turns out that we can use the fact that $x^2 - a^2 = (x + a)(x - a)$ change the fraction. This is known as multiplying by the conjugate, lets see it in action:
+	\begin{align*}
+		f(x) &= \frac{\sqrt{x + 1} - 1}{x} \cdot \qty(\frac{\sqrt{x + 1} + 1}{\sqrt{x + 1} + 1}) = \frac{(\sqrt{x + 1})^2 - 1^2}{x(\sqrt{x + 1} + 1)} \\
+		&= \frac{x + 1 - 1}{x(\sqrt{x + 1} + 1)} = \frac{x}{x(\sqrt{x + 1} + 1)}\\
+		&= \frac{1}{\sqrt{x + 1} + 1}
+	\end{align*}
+	
+	This sort of algebraic manipulation is allowed because at the end of the day, all we did was multiply by 1. With the function in this form, we can now evaluate the limit
+	\[ \lim_{x \to 0} f(x) = \frac{1}{\sqrt{0 + 1} + 1} = \frac{1}{2} \]
+\end{example}
+
+\begin{example}
+	When evaluating limits, one should always try to simplify the function as much as possible before preceding. Consider the function
+	\[ f(x) = \frac{1}{x} - \frac{3}{x(x + 3)} \]
+	
+	If we tried to evaluate the limit as $x$ goes to 0, we may be tempted to either say it does not exist or is an asymptote due to the $1/x$. But if we took the time to simply, we find
+	\[ f(x) = \frac{x + 3}{x(x + 3)} - \frac{3}{x(x + 3)} = \frac{x}{x(x + 3)} = \frac{1}{x + 3} \]
+	Now we can evaluate
+	\[ \lim_{x \to 0} f(x) = \frac{1}{0 + 3} = \frac{1}{3} \]
+\end{example}
+
+For more complicated limits we may sometimes use the squeeze (or sandwich) theorem when applicable.
+\begin{theorem}[Squeeze Theorem]
+	Let $f(x), g(x), h(x)$ be functions defined for all $x \neq a$ in an open interval containing $a$. If
+	\[ f(x) \leq g(x) \leq h(x) \]
+	The their limits obey
+	\[ \lim_{x \to a} f(x) \leq \lim_{x \to a} g(x) \leq \lim_{x \to a} h(x) \]
+	
+	In particular if
+	\[ \lim_{x \to a} f(x) = \lim_{x \to a} h(x) = L \]
+	then it must be the case that
+	\[ \lim_{x \to a} g(x) = L \]
+\end{theorem}
+
+To see how we may use this theorem to solve otherwise impossible limits, consider the following example.
+
+\begin{example}
+	Suppose we have a function
+	\[ f(x) = x \cos(\frac{1}{x}) \]
+	and we wish to evaluate the limit as $x$ goes to 0. We can't use the limit laws because then we'd be dividing by zero, so instead we note that
+	\[ -1 \leq \cos(x) \leq 1 \qquad \text{ and so } \qquad -x \leq f(x) \leq x \]
+	
+	It doesn't matter what's inside the cosine because it will always be between -1 and +1. Thus we just need to compute
+	\[ \lim_{x \to 0} -x = 0 \qquad \lim_{x \to 0} x = 0 \]
+	and we are able to conclude, using the squeeze theorem,
+	\[ \lim_{x \to 0} f(x) = 0 \]
+\end{example}
+
+Note that in order to actually get a limit out of the squeeze theorem, the limit on both sides of the inequality must be the same. If they are different, then the squeeze limit does not tell us anything.
+
+\begin{Optional}[Important Trigonometric Limits]
+For this subsection I will use without proof the following limits\footnote{A geometric proof of the first limit using the squeeze theorem is provided in the textbook and the second can be found by multiplying by the conjugate}
+\[ \lim_{x \to 0} \frac{\sin(x)}{x} = 1 \qquad \lim_{x \to 0} \frac{1 - \cos x}{x} = 0\]
+
+Let's see how we can use these two limits to evaluate a deceptively difficult limit
+
+\begin{example}
+	Consider the function
+	\[ f(x) = \frac{\sin^2(3x)}{\sin(2x)} \]
+	
+	We want to evaluate the limit as $x$ approaches $0$. At first glance, we don't really see much that we can do. After all, both the numerator and denominator goes to zero. However, before we give up and quit math forever, we notice that there is one (indeed the only) thing to do: rewrite the numerator. 
+	\[ f(x) = \frac{1 - \cos^2(3x)}{\sin(2x)} = \frac{(1 + \cos(3x))(1 - \cos(3x))}{\sin(2x)} \]
+	
+	We now remember that we've seen part of this numerator before, it's the same numerator in the limit we first introduced! But we're missing the denominator, furthermore the function instead the cosine is $x$, not $3x$. To fix this, we turn to the old trick: multiply by 1. This also fixes the sine in the denominator
+	\begin{align*}
+		f(x) &= \frac{(1 + \cos(3x))(1 - \cos(3x))}{\sin(2x)} \cdot \qty(\frac{2x}{2x}) \cdot \qty(\frac{3x}{3x}) \\
+		&= \qty(\frac{2x}{\sin(2x)}) \cdot \qty(\frac{1 - \cos(3x)}{3x}) \cdot \qty(\frac{2x(1 + \cos(3x))}{3x}) \\
+		&= \frac{2}{3} \qty(\frac{1}{\sin(2x)/2x}) \qty(\frac{1 - \cos(3x)}{3x}) (1 + \cos(3x))
+	\end{align*}
+	Now we can evaluate the limit
+	\[ \lim_{x \to 0} f(x) = \frac{2}{3} \cdot \frac{1}{1} \cdot 0 \cdot (1 + 0) = 0 \]
+\end{example}
+
+\end{Optional}
 
 \newpage 
 \subsection{Continuity}
 
+% Definition of continuity
+% Types of discontinuity
+% Interval continuity + examples
+% Limit composition
+% Intermediate value theorem
+
 \newpage 
-\subsection{Definition of a Limit}
+\subsection{Hard Topic: Precise Definition of a Limit}
+
+% Introduction to epsilon delta
+% Examples
+% Proving a limit law
+% Very hard example/proof
