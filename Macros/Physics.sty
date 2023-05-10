@@ -1,0 +1,49 @@
+\RequirePackage{amsmath, amsfonts, amssymb}
+\RequirePackage{physics, tensor}
+\RequirePackage{mathtools, latexsym}
+\RequirePackage{graphicx}
+\RequirePackage{parskip}
+
+% Formatting
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{fancyhdr, enumitem} 
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0pt}
+
+% Custom environments
+\RequirePackage{amsthm, thmtools}
+\declaretheoremstyle[
+    spaceabove=12pt,
+    spacebelow=12pt
+]{exercise}
+\declaretheorem[style=exercise]{exercise}
+
+\RequirePackage{mdframed}
+\newmdenv[
+	linewidth=1,
+	skipabove=8pt
+]{answer}
+% ======================================================================
+\ProvidesPackage{MyMacros}[Will's Macros]
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\cx}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\lag}{\mathcal{L}}
+
+\newcommand\setb[1]{\left\{#1\right\}}
+\newcommand{\vbrack}[1]{\left\langle #1 \right\rangle}
+\renewcommand{\vec}[1]{\vectorbold*{#1}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand\inv[1]{{#1}^{-1}}
+
+\newcommand{\im}{\text{Im }}
+\renewcommand{\ker}{\text{Ker }}
+
+\newcommand{\thus}{\Longrightarrow}

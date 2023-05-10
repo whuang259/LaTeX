@@ -1,0 +1,406 @@
+\section{Physical Fundamentals of Mechanics}
+\subsection{Kinematics}
+For a given point undergoing motion, the average and instantaneous velocities are
+\[ \vbrack{\vec{v}} = \frac{\Delta \vec x}{\Delta t} \qquad \vec v = \frac{d\vec x}{dt} \]
+where $\vec x$ is the displacement vector. Similarly the average and instantaneous accelerations are
+\[ \vbrack{\vec a} = \frac{\Delta \vec v}{\Delta t} \qquad \vec a = \frac{d\vec v}{dt} \]
+ 
+The distance covered by a point is given by the integral
+\[ s = \int_{t_0}^{t_1} v \, dt \] 
+
+For a point undergoing constant acceleration (in one dimension), we may integrate twice to recover the equation for 1D motion
+\[ v(t) = \int a\, dt = v_0 + at \qquad s(t) = \int v\, dt = s_0 + v_0t + \frac{1}{2} at^2 \]
+
+Dropping the explicit $t$ dependence, we may manipulate these two to get a useful relation
+\[ t = \frac{v - v_0}{a} \qquad x - x_0 = v_0 t + \frac{1}{2}at^2 \]
+\[ \therefore 2a(x - x_0) = 2v_0(v - v_0) + (v - v_0)^2 = v^2 - v_0^2 \]
+ 
+The acceleration of a point may be broken down into components tangential and normal to the a trajectory, let $R$ be the radius of curvature at a given point, then the components are:
+ \[ a_t = \frac{d v_t}{dt} \qquad a_n = \frac{v^2}{R} \]
+ 
+The angular velocity and accelerations are given by
+\[ \vec{\omega} = \frac{d\vec\theta}{dt} \qquad \vec\alpha = \frac{d\vec\omega}{dt} \]
+To convert between angular and linear quantities for a rotating body
+\[ \vec{v} = (\omega \vec r) \qquad \omega_n = \omega^2 R \qquad |\omega_t| = \alpha R \]
+where $R$ is the distance from the rotation action and $\vec r$ is the radius vector.
+
+% Exercise 1 ========================================================
+\begin{exercise}
+There are two ways to arrive at an answer. If we work in the frame of the river, i.e. stationary, then after $\tau$ time has passed the two positions are
+\[ x_R = v_r \tau \qquad x_B = (v_r + v_B) \tau \]
+where $v_r$ is the flow velocity of the river and $v_B$ the thrust provided by the engine. At this point the boat turns around and we can solve for the time taken for the boat to once again pass the raft.
+\[ v_r \tau + v_r t = (v_r + v_b) \tau + (v_r - v_b) t \thus \tau = t \]
+
+Before we continue, note that we could've solved this problem another way. By working in the (inertial) reference frame of the raft, we know have the following problem: a boat travels away from us at speed $v_B$ for $\tau$ time before turning around and coming back at the same speed. It's quite obvious then that the return time is the same, indeed this is the same conclusion we arrive at in the stationary frame. 
+
+When we pass the raft it has drifted a total of $\ell$ distance from it's initial point, we may now solve for the flow velocity of the river
+\begin{answer}
+	\[ v_r (2 \tau) = \ell \thus v_r = \frac{\ell}{2\tau} \]
+\end{answer}
+
+This has units of length over time which is expected for a velocity. Numerical calculation yields a final answer
+\[ v_r = \frac{6 \text{ km}}{120 \text{ min}} = 3 \text{ m/s}\]
+
+Google tells us that a moderately fast river flows at around 5 km/hr, so this is reasonable.
+\end{exercise}
+
+
+\begin{exercise}
+Let the total distance for the trip be $\ell$ and $t$ the total time taken. First we compute the time taken for the first half of the trip
+\[ t_1 = \frac{\ell/2}{v_0} = \frac{\ell}{2v_0} \]
+
+The remaining half of the distance is covered by traveling at $v_1$ for half the time and $v_2$ for the other half, we can solve for the total time to cover the remaining half
+\[ \frac{\ell}{2} = \qty(\frac{t_2}{2})v_1 + \qty(\frac{t_2}{2})v_2 \thus t_2 = \frac{\ell}{v_1 + v_2} \]
+
+Thus the average velocity is
+\begin{answer}
+	\[ \vbrack{v} = \frac{\ell}{t_1 + t_2} = \frac{2v_0(v_1 + v_2)}{2v_0 + v_1 + v_2}\]
+\end{answer}
+
+This has units of velocity, as expected, and there is no numerical calculation.
+\end{exercise}
+
+
+\begin{exercise}
+If we were to graph the velocity as a function of time, the total distance traveled will be the area under the curve, which is a trapezoid in this case. Given the average velocity and total travel time, the total distance will be
+\[ d = \vbrack{v} \tau \]
+
+Suppose the car travels at uniform velocity for $t$ time, then the maximum velocity is $v = w(\tau - t) / 2$ and total distance traveled is
+\[ d = \frac{\tau + t}{2} \cdot \frac{w(\tau - t)}{2} = \vbrack{v} \tau \thus w (\tau^2 - t) = 4\vbrack{v} \tau \]
+
+If we wish to avoid this sort of geometric calculation, we can work entirely with algebra. If $t$ is the time spent at constant velocity, we use the equations of 1D motion to split the total distance into three parts: the first part is when the car starts at rest and accelerates to that constant velocity
+\[ x_1 = \frac{w}{2}\qty(\frac{\tau - t}{2})^2 \]
+
+Then it travels along for some time
+\[ x_2 = w\tau \qty(\frac{\tau - t}{2})\]
+
+And finally it slows down to a stop
+\[ x_3 = w\qty(\frac{\tau - t}{2})^2 - \frac{w}{2}\qty(\frac{\tau - t}{2})^2 \]
+
+Adding these three parts together gets our previous result
+\[ d = \sum x_i = w\tau \qty(\frac{\tau - t}{2}) + w\qty(\frac{\tau - t}{2})^2 = \frac{w(\tau^2 - t^2)}{4}\]
+
+We solve to get the total time spent in uniform velocity
+\begin{answer}
+	\[ t = \sqrt{\tau^2 - \frac{4\vbrack{v} t}{w}} \]
+\end{answer}
+
+It's easy to see that the units check out, numerical calculation proceeds
+\[ t = \sqrt{(\SI{25}{s})^2 - \frac{4 (\SI{72}{km/hr}) (\SI{25}{s})}{\qty(\SI{5}{m/s^2})}} = \SI{15}{s} \]
+
+Since this is less than the total travel time of $\tau = \SI{25}{s}$, the answer is reasonable.
+\end{exercise}
+
+
+\begin{exercise}
+A) The point is only in motion for $\SI{20}{s}$ in which it travels $\SI{2.0}{m}$, thus the average velocity is 
+\[ \vbrack{v} = \frac{\SI{2.0}{m}}{\SI{20}{s}} = \SI{0.1}{m/s} \]
+
+B) By counting squares, we find the maximum velocity occurs somewhere in the middle
+\[ v_{max} = \frac{\SI{1}{m}}{\SI{4}{s}} = \SI{0.25}{m/s} \]
+
+C) This occurs at $t_0 = \SI{16}{s}$
+\end{exercise}
+
+
+% Exercise 5
+\begin{exercise}
+The two particles collide if there exists a $t \geq 0$ such that
+\[ \vec r_1 + \vec v_1 t = \vec r_2 + \vec v_2 t \thus (\vec r_1 - \vec r_2) = (\vec v_2 - \vec v_1) t \]
+
+This is only possible if the two differences are in the same direction, that is
+\begin{answer}
+	\[ \frac{\vec r_1 - \vec r_2}{\abs{\vec r_1 - \vec r_2}} = \frac{\vec v_2 - \vec v_1}{\abs{\vec v_2 - \vec v_1}}\]
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+We will not assume the ship travels horizontally, let the two velocities (in a stationary frame, i.e. water) be
+\[ \vec v_0 = \vbrack{v_{0,x}, v_{0,y}} \qquad \vec v = \vbrack{v \cos\phi, v\sin\phi} \]
+
+Shifting to the reference frame of the ship, the wind's velocity becomes
+\[ \vec v' = \vbrack{v \cos\phi + v_{0,x}, v\sin\phi + v_{0,y}} \]
+
+The angle and magnitude of the wind velocity in this frame is
+\begin{answer}
+	\[ \phi' = \arctan(\frac{v \sin\phi + v_{0,y}}{v \cos\phi + v_{0,x}}) \]
+	\[ v' = \sqrt{v^2 + v_0^2 + 2v(v_{0,x} \cos\phi + v_{0,y}\sin\phi)} \]
+\end{answer}
+
+The units check out since trig formulas give unit-less quantities and we get as final answers
+\[ \phi' = \arctan(\frac{15\sin(60)}{15\cos(60) + 30}) = \arctan(\sqrt{3}) = \ang{19} \]
+\[ v' = \sqrt{15^2 + 30^2 + 900\cos(60)} = \SI{40}{km/hr} \]
+
+Since the wind is blowing against the boat, these are reasonable numbers.
+\end{exercise}
+
+
+\begin{exercise}
+First we must find the actual velocities of the two swimmers. Suppose the river flows top to bottom and the swimmers start at the left bank. The first swimmer swims in a line perpendicular to water flow. To counteract the river current, he must have vertical component $v_0$. To find the horizontal, recall that in the reference frame of water (which is moving), the speed of the swimmer is $v$.
+\[ \vec v_1' = \vbrack{x, 0 + v_0} \qquad v_1 = \sqrt{x^2 + v_0^2} = v' \thus x = \sqrt{v^{'2} - v_0^2} \]
+
+Thus in the at rest frame of the river, the first swimmer has velocity
+\[ \vec v_1 = \vbrack{\sqrt{v^{'2} - v_0^2}, v_0} \]
+
+The second swimmer just goes with the flow, his velocity in the river frame
+\[ \vec v_2 = \vbrack{v', 0} \]
+
+Now we can compute the amount of time taken to cross, let $\ell$ be the length of the river
+\[ t_1 = \frac{\ell}{\sqrt{v^{'2} - v_0^2}} \qquad t_2 = \frac{\ell}{v'} \]
+
+Thus the time spend walking is
+\[ \Delta t = t_1 - t_2 = \frac{\ell(v' - \sqrt{v^{'2} - v_0^2})}{v \sqrt{v^{'2} - v_0^2}} \]
+
+The distance walked is the distance drifted, so the walking velocity is
+\begin{answer}
+	\[ v_w = \frac{v_0 t_2}{\Delta t} = \frac{v_0 \sqrt{v^{'2} - v_0^2} }{v' - \sqrt{v^{'2} - v_0^2}} = \frac{v_0}{\qty( 1 - \dfrac{v_0^2}{v^{'2}} )^{-1/2} - 1} \]
+\end{answer}
+
+The quantity in the denominator is unit-less, so this has units of velocity. The final numeric answer is
+\[ v_w = \frac{2.0}{\qty(1 - \frac{2.0^2}{2.5^2})^{-1/2} - 1} = \SI{3}{km/hr} \]
+
+Given the the swimmers swim at around 2 km/hr, this is a reasonable walking speed.
+\end{exercise}
+
+
+\begin{exercise}
+Let $v$ be the flow velocity of the river. Boat $A$ moves away from the buoy at velocity $(\eta + 1)v$ and back at $(\eta - 1)v$. If $\ell$ is the distance traveled, then the total time is
+\[ \tau_A = \frac{\ell}{(\eta + 1)v} + \frac{\ell}{(\eta - 1)v} = \frac{\ell}{v} \qty(\frac{2\eta}{\eta^2 - 1}) \]
+
+The second boat must counteract the river flow, we get the velocity in a similar way to the previous problem
+\[ v_B = \vbrack{0, v\sqrt{\eta^2 - 1}} \]
+
+Boat B travels at the same speed to and from the buoy, the total time will be
+\[ \tau_B = \frac{2\ell}{v\sqrt{\eta^2 - 1}} \]
+
+Thus the ratio is
+\begin{answer}
+	\[ \frac{\tau_A}{\tau_B} = \frac{\eta}{\sqrt{\eta^2 - 1}} \]
+\end{answer}
+
+$\eta$ is a unit-less quantity (it's a scalar), so we get not units which is appropriate for a ratio. The final numerical answer is
+\[ \frac{\tau_A}{\tau_B} = \frac{1.2}{\sqrt{1.44 - 1}} = 1.8 \]
+
+The boat traveling along the current is nearly twice as fast, which seems realistic.
+\end{exercise}
+
+
+\begin{exercise}
+The speed of the boat (relative to water) is $n$ times less than the flow velocity. Let the flow velocity be $v_0$ and $v$ the velocity of the boat. In the reference frame of the water
+\[ \vec v' = \vbrack{\frac{v_r}{n} \cos\phi, \frac{v_r}{n} \sin\phi} \]
+
+Suppose the river flows from left to right, then in a stationary reference frame
+\[ \vec v = \vbrack{\frac{v_r}{n} \cos\phi + v_r, \frac{v_r}{n} \sin\phi} \]
+
+Let $\ell$ be the length across the river, then we can compute the time taken to cross the river and total distance drifted
+\[ t = \frac{\ell n}{v_r \sin\phi} \qquad d = \frac{\ell (\cos\phi + n)}{\sin\phi} \]
+
+We want to minimize this, so we take the derivative
+\[ \dv{d}{\phi} = \frac{\ell (-1 - n \cos\phi)}{\sin^2(\phi)} = 0 \thus \cos\phi = -\frac{1}{n} \]
+
+\newpage 
+Using some trigonometric tricks, we can solve for $\phi$ in terms of $n$
+\begin{answer}
+	\[ -\cos(\phi) = \frac{1}{n} \thus \sin(\phi - \frac{\pi}{2}) = \frac{1}{n} \thus \phi = \arcsin(\frac{1}{n}) + 		\frac{\pi}{2} \]
+\end{answer}
+
+All quantities involved are unit-less so this is a valid angle. Our final answer is
+\[ \phi = \arcsin(\frac{1}{2}) + \frac{\pi}{2} = \frac{2 \pi}{3} \]
+
+If our speed is less than flow velocity, it makes sense that we'd want to angle our path slightly opposite flow direction but not too far since that would increase travel time.
+\end{exercise}
+
+
+% Exercise 10 ========================================================
+\begin{exercise}
+Suppose object 1 was thrown straight up and object 2 thrown at an angle $\phi$. Their initial velocities are
+\[ \vec v_1 = \vbrack{0, v_0} \qquad \vec v_2 = \vbrack{v_0\cos\theta, v_0\sin\theta} \]
+
+We can determine the position vectors at an arbitrary time $t$ using equations of motion
+\[ \vec s_1(t) = \vbrack{0, v_0 t - \frac{g t^2}{2}} \qquad \vec s_2(t) = \vbrack{v_0 t \cos\theta, v_0 t \sin\theta - \frac{g t^2}{2}} \]
+
+Then the distance over time is
+\begin{answer}
+	\[ d(t) = \sqrt{(v_0 t \cos\theta)^2 + (v_0t - v_0 t \sin\theta)^2} = v_0 t \sqrt{2(1 - \sin\theta)} \]
+\end{answer}
+
+The number inside the square root is unit-less, so this has units of distance. Final answer is
+\[ d(\SI{1.7}{s}) = (\SI{25}{m/s})(\SI{1.7}{s})\sqrt{2(1 - \sin(60)} = \SI{22}{m} \]
+\end{exercise}
+
+
+\begin{exercise}
+The two velocity vectors over time are
+\[ \vec v_1(t) = \vbrack{-v_1, -gt} \qquad \vec v_2(t) = \vbrack{v_2, -gt} \]
+
+When two vector are perpendicular, their dot product vanishes. This allows us to solve for the time where this happens
+\[ \vec v_1(t) \cdot \vec v_2(t) = -v_1v_2 + g^2t^2 \thus t = \frac{\sqrt{v_1v_2}}{g} \]
+
+The two position vectors over time are
+\[ \vec s_1(t) = \vbrack{-v_1t, - \frac{-gt^2}{2}} \qquad \vec s_2(t) = \vbrack{v_2 t, -\frac{-gt^2}{2}} \]
+
+\newpage
+We could've noted this right away, but since the two objects were only moving horizontally initially, they will always have the same height regardless of time. But now we see it clearly, the distance between the two is
+\begin{answer}
+	\[ d(t) = (v_1 + v_2)t = \frac{(v_1 + v_2)\sqrt{v_1v_2}}{g} \]
+\end{answer}
+
+The numerator has units $\SI{}{m^2/s^2}$ and denominator $\SI{}{m/s^2}$, thus this has units of distance. Final answer is
+\[ d(t) = \frac{(\SI{3}{m/s} + \SI{4}{m/s})\sqrt{\SI{12}{m^2/s^2}}}{\SI{9.8}{m/s^2}} = \SI{2.5}{m} \]
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+% Exercise 15
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 20 ========================================================
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 25
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 30 ========================================================
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 35
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 40 ========================================================
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 45
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 50 ========================================================
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+% Exercise 55
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
