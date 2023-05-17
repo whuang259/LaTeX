@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  9 MAY 2023 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  16 MAY 2023 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,12 +733,12 @@ Package mdframed Info: mdframed detected package amsthm
  [5] [6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 156.
+(mdframed)              on input line 155.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 162.
  [7]
-<images/Figure 2.2.1.jpg, id=109, 234.6366pt x 276.0714pt>
+<images/Figure 2.2.1.jpg, id=112, 234.6366pt x 276.0714pt>
 File: images/Figure 2.2.1.jpg Graphic file (type jpg)
 <use images/Figure 2.2.1.jpg>
 Package pdftex.def Info: images/Figure 2.2.1.jpg  used on input line 181.
@@ -764,20 +764,58 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 317.
- [12] [13])
-[14] (D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
+ [12]
+<images/Figure 2.3.1.png, id=149, 803.25093pt x 246.1697pt>
+File: images/Figure 2.3.1.png Graphic file (type png)
+<use images/Figure 2.3.1.png>
+Package pdftex.def Info: images/Figure 2.3.1.png  used on input line 333.
+(pdftex.def)             Requested size: 441.78937pt x 135.39374pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 338.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 346.
+ [13 <./images/Figure 2.3.1.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 362.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 369.
+ [14]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 410.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 413.
+ [15]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 427.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 430.
+<images/Figure 2.3.2.png, id=179, 336.50719pt x 310.91156pt>
+File: images/Figure 2.3.2.png Graphic file (type png)
+<use images/Figure 2.3.2.png>
+Package pdftex.def Info: images/Figure 2.3.2.png  used on input line 435.
+(pdftex.def)             Requested size: 336.50635pt x 310.91078pt.
+ [16 <./images/Figure 2.3.2.png>] [17])
+[18] (D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
 (D:\Documents\TexMaker\Calculus\build\Chapter 2.aux))
 Package rerunfilecheck Info: File `"Calculus Club Notes".out' has not changed.
 (rerunfilecheck)             Checksum: FBBD48D63F92CE850A63F0716DBF93D0;904.
  ) 
 Here is how much of TeX's memory you used:
- 14234 strings out of 476331
- 232430 string characters out of 5786821
+ 14271 strings out of 476331
+ 233071 string characters out of 5786821
  1864660 words of memory out of 5000000
- 34362 multiletter control sequences out of 15000+600000
- 523827 words of font info for 80 fonts, out of 8000000 for 9000
+ 34375 multiletter control sequences out of 15000+600000
+ 524174 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 91i,14n,91p,706b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 91i,14n,91p,817b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\William\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 rm1200.pk><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type
@@ -797,13 +835,14 @@ ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Willia
 m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Us
 ers/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmti7.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmti8.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
+/cm/cmti12.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmti7.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmti8.pfb><C:/Users/William/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.pdf
-" (14 pages, 349895 bytes).
+" (18 pages, 474560 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 54 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

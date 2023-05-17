@@ -4,8 +4,8 @@ Limits form the very backbone of calculus, almost every concept and definition c
 
 In around 450 BC, Zeno, as ancient Greek philosophers tended to do, sat around thinking of paradoxes. Here are two of his most famous:
 \begin{enumerate}
-	\item Atalanta\footnote{Famous figure in Greek mythology} is trying to walk to the end of a path. To walk the entire path she must first walk half the path, then half the remaining path (a quarter), then half the next remaining path (an eigth), then a sixteenth, a thirty-second, etc. Since Atalanta has to walk an infinite number of paths, how can she ever finish walking the path? 
-	\item Achilles\footnote{Even more famous figure in Greek mythology} is racing a tortoise\footnote{A very famous figure in fairy tale lore, famously starred in the hit movie ``Tortoise and the Hare"}. To make if fair, he gives the tortoise a head start (say 100m). Once he takes off and covers the first 100m, the tortoise would've meandered a couple more meters. Once he runs the next few meters, the tortoise will cover a few more meters, and so on so forth. So the questions is: If every time Achilles catches up to where the tortoise was prior, the tortoise remains a bit ahead, how will Achilles ever pass the tortoise?
+	\item \href{https://en.wikipedia.org/wiki/Atalanta}{Atalanta}\footnote{Famous figure in Greek mythology} is trying to walk to the end of a path. To walk the entire path she must first walk half the path, then half the remaining path (a quarter), then half the next remaining path (an eigth), then a sixteenth, a thirty-second, etc. Since Atalanta has to walk an infinite number of paths, how can she ever finish walking the path? 
+	\item \href{https://en.wikipedia.org/wiki/Achilles}{Achilles}\footnote{Even more famous figure in Greek mythology} is racing a \href{https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare}{tortoise}\footnote{A very famous figure in fairy tale lore, famously starred in the hit movie ``Tortoise and the Hare"}. To make if fair, he gives the tortoise a head start (say 100m). Once he takes off and covers the first 100m, the tortoise would've meandered a couple more meters. Once he runs the next few meters, the tortoise will cover a few more meters, and so on so forth. So the questions is: If every time Achilles catches up to where the tortoise was prior, the tortoise remains a bit ahead, how will Achilles ever pass the tortoise?
 \end{enumerate}
 
 The astute reader may notice that these paradoxes are clearly resolvable. After all, we walk across paths all the time and obviously Achilles will eventually pass the turtle, so why are these so famous? 
@@ -81,7 +81,7 @@ Let $f(x)$ be a function and $a$ some real number. There are two different one-s
 \end{definition}
 
 \begin{example}
-Consider a piece-wise function
+Consider a piecewise function
 \[ f(x) = \begin{cases} 
 x & x \leq 0 \\
 x^2 + 1 & x > 0
@@ -117,9 +117,9 @@ Thus we cannot conclude that a limit exists unless both the left- and right-hand
 \end{example}
 
 \begin{example}
-	Consider a piece-wise function
+	Consider a piecewise function
 	\[ f(x) = \begin{cases} 
-	\sin(x) & x <= 0 \\ 
+	\sin(x) & x \leq 0 \\ 
 	\cos(x) & x > 0 
 	\end{cases} \]
 	We have the following one-sided limits
@@ -152,7 +152,7 @@ The value of the limit is not the only place where infinity could exist, we may 
 \end{example}
 
 Limits with infinity gives us a way to find asymptotes without having to draw a graph.
-\begin{theorem}
+\begin{theorem}[Asymptotes]
 	Let $f(x)$ be a function and $a$ a real number. The line $x = a$ is a vertical asymptote if both one-sided limits are positive or negative infinity. In symbols
 	\[ \lim_{x \to a^-} f(x) = \pm \infty \qquad \lim_{x \to a^+} f(x) = \pm \infty \]
 	Note that this does not mean the limit itself is defined as we say in the case of $f(x) = 1/x$. 
@@ -319,11 +319,141 @@ Let's see how we can use these two limits to evaluate a deceptively difficult li
 \newpage 
 \subsection{Continuity}
 
-% Definition of continuity
-% Types of discontinuity
-% Interval continuity + examples
-% Limit composition
-% Intermediate value theorem
+At its essence, a function is continuous if you can draw if without picking up your pencil. This means that functions like $x, x^2, \sin(x)$ are continuous while $1/x$ is not. However intuition is never good enough and we need a formal mathematical definition of what it means for a function to be continuous. First, we need to be able to visually tell when a function is discontinuous, this is easy:
+
+% Add some pictures
+There are three ways a function fails to be discontinuous
+\begin{enumerate}
+	\item A removable (or hole) discontinuity: there is a missing point, the function may or may not be defined there
+	\item A jump discontinuity: the function literally jumps
+	\item An infinite discontinuity: there is a vertical asymptote (think $1/x$)
+\end{enumerate}
+
+\begin{center}
+	\includegraphics[scale=0.55]{images/Figure 2.3.1.png} 
+\end{center}
+
+Now that we know what it looks like when a function is not continuous, we can write down a definition. 
+\begin{definition}
+	A function $f(x)$ is continuous at a point $x = a$ if all of the following hold:
+	\begin{itemize}
+		\item The function is defined at $x = a$, that is $f(a)$ is defined
+		\item The limit $\lim_{x \to a} f(x)$ exists
+		\item The two above quantities are equal
+		\[ \lim_{x \to a} f(x) = f(a) \]
+	\end{itemize}
+	We say that $f(x)$ is discontinuous at $x = a$ if any of the above fail.
+\end{definition}
+
+This definition captures the essence of ``not lifting up your pencil." Requiring that the function exist means that we won't have any infinite discontinuities and requiring it equal the limit means that there will not be any hole or jump discontinuities.
+
+\begin{example}
+	Suppose we have a piecewise function
+	\[ f(x) = \begin{cases}
+	\sin(x) \qquad x \leq 0 \\
+	\cos(x) \qquad x > 0
+	\end{cases} \]
+	We have two limits as $x$ approaches 0
+	\[ \lim_{x \to 0^-} f(x) = \sin(0) = 0 \qquad \lim_{x \to 0^+} f(x) = \cos(0) = 1 \]
+	Thus the function $f(x)$ is discontinuous at $x = 0$.
+\end{example}
+
+We can use limits to classify the types of discontinuities directly
+\begin{theorem}[Discontinuities]
+	Suppose $f(x)$ is discontinuous at $x = a$.
+	\begin{enumerate}
+		\item It is a removable discontinuity if the limit $\lim_{x \to a} f(x)$ exists and is not infinity.
+		\item It is a jump discontinuity if the limit does not exist, but the two one-sided limits exist (so they are not equal).
+		\item It is an infinite discontinuity if the one-sided limits are $\pm \infty$, i.e. there is a vertical asymptote there.
+	\end{enumerate}
+\end{theorem}
+
+\begin{example}
+	Consider the function
+	\[ f(x) = \frac{x^2 - 1}{x^2 - 3x + 2} \]
+
+	First we simplify the numerator and denominator, but we do not cancel.
+	\[ f(x) = \frac{(x + 1)(x - 1)}{(x -1)(x - 2)} \]
+	There are two candidates for discontinuities, $x = 1$ and $x = 2$. Now we may simplify the function (by canceling common factors) and evaluate limits.
+	\[ \lim_{x \to 1} f(x) = \frac{1 + 1}{1 - 2} = -2 \]
+	
+	Thus $x = 1$ is a hole discontinuity because while the limit exists, $f(1) = 0/0$ is undefined. On the other hand, for $x = 2$ 
+	\[ \lim_{x \to 2^-} f(x) = -\infty \qquad \lim_{x \to 2^+} f(x) = \infty \]	
+	there is a vertical asymptote, so this is an infinite discontinuity.
+\end{example}
+
+A common type of question is to identify intervals for which a function is continuous. A function is continuous over an interval if it is continuous at every point within that interval.
+
+\begin{example}
+	Take the previous function, the interval for which it is continuous is
+	\[ (-\infty, 1) \cup (1, 2) \cup (2, \infty) \]
+\end{example}
+
+Intervals are typically written using interval notation rather than inequalities. Here is a brief rundown:
+\begin{itemize}
+	\item If an interval includes an endpoint (i.e. $\leq, \geq$), use a square bracket
+	\item If it doesn't include an endpoint, use a parentheses
+	\item For one sided intervals, use $\infty$ as one of the endpoints, these will always use parentheses.
+\end{itemize}
+
+So the example above represents the following inequalities (the U symbol is read as union and basically just means to combine all the intervals together)
+\[ 1 < x \text { or } 1 < x < 2 \text{ or } x < 2 \]
+
+For piecewise functions, we have a notion of one-sided continuity. This is basically just taking the normal definition and replacing the limit with a one-sided one. Here's an example:
+
+\begin{example}
+	The graph $\sqrt{x}$ is continuous to the right of $x = 0$, we write this as $[0, \infty)$ 
+\end{example}
+
+When we introduced the limit laws, we acquired the power to evaluate almost every type of limit directly. However for functions within other functions, we need a new skill. 
+
+\begin{theorem}[Composition of Limits]
+ 	Suppose $\lim_{x \to a} f(x) = L$ and $g(x)$ is continuous at $L$, then
+ 	\[ \lim_{x \to a} g(f(x)) = g(L) \]
+\end{theorem} 
+
+Now we can use direct substitution for almost every limit thrown at us. 
+
+\begin{example}
+	Consider the function
+	\[ f(x) = \cos(x + \pi) \]
+	As $x$ approaches $\pi$, we can use the composition law to evaluate
+	\[ \lim_{x \to \pi} f(x) = \cos(\lim_{x \to \pi} x + \pi) = \cos(2\pi) = 1 \]
+\end{example}
+
+\newpage 
+Mathematicians love continuous functions, they have many properties that are appealing. Here's a theorem that gives a glimpse to the power within such functions.
+
+\begin{theorem}[Intermediate Value Theorem]
+	Let $f(x)$ be a function which is continuous on a \emph{closed} interval $[a,b]$. Then if we take any number $z$ in between $f(a)$ and $f(b)$, we can find a number $c$ inside the interval which satisfies
+	\[ f(c) = z \]
+\end{theorem}
+
+There is a lot of math mumbo-jumbo here so first let's draw a picture
+
+\begin{center}
+	\includegraphics[scale=1]{images/Figure 2.3.2.png} 
+\end{center}
+
+Let's break down the different pieces of the theorem to better understand what it is saying. First we need to have a function which is continuous on some open interval. This does not mean that the function is only continuous on that interval, just that for the theorem to work it should be continuous on the two endpoints and everywhere in between.
+
+For instance if we had $f(x) = 1/x$, then $[1,2]$ is a totally fine interval but $(0,2]$ is not because $1/x$ is not continuous at $x = 0$. If we had a function that is continuous everywhere like $x$ or $\cos(x)$, then any interval we pick will automatically work.
+
+The next part of the theorem says to take some $y$-value in between $f(a)$ and $f(b)$, call it $z$. The two endpoints on the $x$-axis gives us two ``heights:" the function evaluated there. We can choose any point in that vertical range and give it a special name ($c$ in this case), this is our special little $y$-value. Keep it close to your heart.
+
+Now the important part of the theorem. Our little $y$-value is lost, we don't know where it came from; specifically the $x$-value that got us that $y$. Unfortunately, we won't be able to find that $x$ value using the theorem, but we can at least be certain it exists and our $y$-value actually has a home it came from. The theorem tells us that there must be an $x$-value, let's call it $c$, in between the two endpoints we specified which gives us $z$. In math terms, we can apply the function to get back to our $y$ value: $f(c) = z$.
+
+Intuitively the theorem should mostly make sense if you think long and hard about it. If we have an interval on the $x$-axis, there is another interval on the $y$-axis (see the picture above). Then since the function is continuous, if you trace the function over your interval, you must cover that $y$-axis interval at some point. There is no way around this, the only way is if you cheated and lifted your pencil in which case the function is obviously no longer continuous.
+
+Let's see an example of this theorem in action.
+\begin{example}
+	Show that $f(x) = x - \sin(x)$ has at least one zero (i.e. at least one $x$-intercept). 
+	
+	First we note that $f(x)$ is continuous everywhere, so any interval will satisfy the first part of the theorem. We need to find two specific endpoints, one where $f(x) < 0$ and one where $f(x) > 0$. Here's two
+	\[ f(-\pi) = -\pi - sin(-\pi) = -\pi < 0 \qquad f(\pi) = \pi - \sin(\pi) = \pi > 0 \]
+	
+	Thus the intermediate value theorem tells us there is a point, let's call it $c$, in between $-\pi$ and $\pi$ such that $f(c) = 0$. $c$ is the $x$-intercept we are looking for.
+\end{example}
 
 \newpage 
 \subsection{Hard Topic: Precise Definition of a Limit}
