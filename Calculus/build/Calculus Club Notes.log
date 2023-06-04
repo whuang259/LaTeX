@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  16 MAY 2023 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  21 MAY 2023 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,7 +802,11 @@ File: images/Figure 2.3.2.png Graphic file (type png)
 <use images/Figure 2.3.2.png>
 Package pdftex.def Info: images/Figure 2.3.2.png  used on input line 435.
 (pdftex.def)             Requested size: 336.50635pt x 310.91078pt.
- [16 <./images/Figure 2.3.2.png>] [17])
+ [16 <./images/Figure 2.3.2.png>] [17]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 461.
+)
 [18] (D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
 (D:\Documents\TexMaker\Calculus\build\Chapter 2.aux))
 Package rerunfilecheck Info: File `"Calculus Club Notes".out' has not changed.
@@ -840,7 +844,7 @@ ic/amsfonts/cm/cmti7.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmti8.pfb><C:/Users/William/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.pdf
-" (18 pages, 474560 bytes).
+" (18 pages, 474911 bytes).
 PDF statistics:
  297 PDF objects out of 1000 (max. 8388607)
  77 named destinations out of 1000 (max. 500000)

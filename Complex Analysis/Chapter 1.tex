@@ -1,0 +1,414 @@
+\section{Preliminaries}
+\subsection{The Complex Plane}
+First let's define some notation which are used frequently throughout complex analysis and go over some basic results.
+
+Any complex number can be written in the form $z = x + iy$ where $x, y \in \re$. The components $x$ and $y$ are referred to as the real and imaginary parts, respectively, and denoted
+\[ x = \Real{z} \qquad y = \Imag{z} \]
+Complex numbers without a real part are called purely imaginary. By plotting the real part of a number on the $x$-axis and the imaginary part on the $y$-axis, we get the complex plane. Thus we can identify $\cx \cong \re^2$. 
+
+The complex conjugate of a complex number $z$ is
+\[ \bar z = x - iy \]
+Thus we have the formulae
+\[ \Real{z} = \frac{z + \bar z}{2} \qquad \Imag{z} = \frac{z - \bar z}{2i} \]
+If $z = \bar z$, then it is a real number and if $z = -\bar z$ it is purely imaginary.
+
+The magnitude, or absolute value, of a complex number is
+\[ \abs{z} = \sqrt{x^2 + y^2} \]
+In the complex plane, this is just the distance from the origin to $z$. From this definition, we have the complex analog to the triangle inequality which is exactly the same.
+\[ \abs{z + w} \leq \abs{z} + \abs{w} \]
+for all $z, w\in \cx$. We also have
+\[ \abs{\Real{z}} \leq \abs{z} \qquad \abs{\Imag{z}} \leq \abs{z} \]
+
+From the triangle inequality, we get two more inequalities
+\[ \abs{z} \leq \abs{z - w} + \abs{w} \qquad \abs{w} \leq \abs{z - w} + \abs{z} \]
+from which we can prove the ``reverse triangle inequality"
+\[ \abs{\abs{z} - \abs{w}} \leq \abs{z - w} \]
+\begin{proof}
+	Using the triangle inequality, we have
+	\[ |z - w| + |w| \geq |z - w + w| = |z| \]
+	\[ |z - w| + |z| = |z - w| + |-z| \geq |z - w - z| = |-w| = |w| \]
+	
+	Rewriting both of these gives
+	\[ |z - w| \geq |z| - |w| \qquad |z - w| \geq |w| - |z| = -(|z| - |w|) \]
+	Now we note that if $x \geq y$ and $x \geq -y$ then $x \geq |y|$. Thus we arrive at the desired result
+	\[ |z - w| \geq \abs{|z| - |w|} \]
+\end{proof}
+
+Using the complex conjugate, we can write
+\[ \abs{z}^2 = z \bar z \qquad \inv z = \frac{\bar z}{|z|^2} \]
+With addition and multiplication defined in the natural way, this shows that $\cx$ is a field i.e. a ring in which every nonzero element has a multiplicative inverse. 
+
+Any complex number can be written in polar form and using Euler's formula we may write
+\[ z = re^{i\theta} = r \cos\theta + i r\sin\theta \]
+We observe that $r = \abs{z}$, the quantity $\theta$ is referred to as the argument and denoted $\arg z = \theta$. In the complex plane, $r$ is the magnitude and $\theta$ the angle from horizontal. If we have two complex numbers
+\[ z = re^{i\theta} \qquad w = se^{i\phi} \]
+then multiplication is simply
+\[ zw = rse^{u(\theta + \phi)} \]
+Thus multiplication in the complex plane is a homothety in $\re^2$.
+
+Now we may discuss more analytical properties of complex numbers, in particular limits and convergence. We should be familiar with these concepts from the real numbers already, we just need carry over them to the complex plane. 
+
+\newpage 
+\begin{definition}[Convergence]
+	A sequence $\setb{z_1, z_2, \ldots, z_n}$ is said to converge to $w \in \cx$ if 
+	\[\lim_{n \to \infty} \abs{z_n - w} = 0 \]
+	If the sequence converges, we write
+	\[ \lim_{n \to \infty} z_n = w \]
+\end{definition}
+
+This is nothing new, since $\cx \cong \re^2$. In fact a sequence of complex numbers converges to a point $w$ if and only if the corresponding points in $\re^2$ converge to the point corresponding to $w$.
+
+\begin{proposition}[Convergence of Complex Numbers]
+	A sequence of complex numbers converges to $w$ if and only if their real and imaginary parts converge to $\Real{w}$ and $\Imag{w}$ respectively.
+\end{proposition}
+\begin{proof}
+	Obvious if we think of points in $\cx$ as points in $\re^2$.
+\end{proof}
+
+We don't always know what a sequence converges to, so we need another condition to tell us when an arbitrary sequence converges. This condition should be familiar.
+
+\begin{definition}[Cauchy Sequences]
+	A sequence $\setb{z_n}$ is Cauchy if 
+	\[ \abs{z_n - z_m} \to 0 \text{ as } n,m \to \infty \]
+	
+	Equivalently, for every $\epsilon > 0$ there exists an integer $N > 0$ such that
+	\[ n,m < N \thus |z_n - z_m| < \epsilon \]
+\end{definition}
+
+A fundamental result from real analysis is that every Cauchy sequence in $\re$ converges to a real number, that is $\re$ is complete. This is true in the complex plane as well.
+
+\begin{theorem}[Completeness of $\cx$]
+	The field of complex numbers $\cx$ is complete, that is every Cauchy sequence of complex numbers will converge to a complex number.
+\end{theorem}
+\begin{proof}
+	A sequence on complex numbers is Cauchy if and only if the real and imaginary parts are both Cauchy. Since $\re$ is complete, we know then that those ``subsequences" will converge to a real number. Thus a Cauchy sequence of complex numbers will converge to a complex number.
+\end{proof}
+
+The final preliminary we must cover is the topology of $\cx$, in particular the notion of open sets. As usual, nothing new is being introduced, we are simply bringing over existing constructions and making them work. The remainder of this section is essentially a series of definitions.
+
+Let $z_0 \in \cx$ be some point and $r > 0$, the open disc centered at $z_0$ of radius $r$ is the set
+\[ D_r(z_0) = \setb{z \in \cx \mid \abs{z - z_0} < r} \]
+Similarly, the closed disc centered at $z_0$ of radius $r$ is the set 
+\[ \bar{D_r}(z_0) = \setb{z \in \cx \mid \abs{z - z_0} \leq r} \]
+Of note is the unit disc, which has a special notation since it is so useful
+\[ \D = \setb{z \in \cx \mid |z| < 1} \]
+
+\begin{definition}[Interior and Limit Points]
+	Let $\Omega \subset \cx$, a point $z_0 \in \Omega$ is an interior point if there exists an $r > 0$ such that
+	\[ D_r(z_0) \subset \Omega \]
+	In words, a point is interior if there exists an open disc around it contained completely within $\Omega$. The set of interior points is called the interior of $\Omega$, usually denoted $\text{int } \Omega$. 
+	
+	A point $z \in \cx$, not necessarily in $\cx$, is a limit point if there exists a sequence
+	\[ \setb{z_n \mid z_n \neq z} \in \Omega \qquad \lim_{n \to \infty} z_n = z \]
+	Alternatively, $z$ is a limit point of $\Omega$ if every open disc containing $z$ contains at least one other point of $\Omega$.
+\end{definition}
+
+A set is open if it is equal to its interior and closed if its complement is open. 
+
+\begin{proposition}
+	A set $\Omega$ is closed if and only if it contains all of its limit points
+\end{proposition}
+\begin{proof}
+	First suppose $\Omega$ is closed and $w$ be a limit point of $\Omega$. Then there exists a sequence $\setb{w_n} \in \Omega$ such that 
+	\[ \lim_{n \to \infty} w_n = 0 \]
+	
+	This means that for every $\epsilon > 0$, there exists an $N > 0$ such that for all $n > N$ we have $|w - w_n| < \epsilon$. Equivalently, for every $r > 0$ the open disc $D_r(w)$ contains a point of $\Omega$. Thus $w$ cannot be in the interior of $\Omega^c$, but $\Omega^c$ is open so $w$ must lie in $\Omega$. 
+	
+	Conversely suppose $\Omega$ is a set which contains all its limit points. Take some $w \not\in \Omega$ and assume for the sake of contradiction that $w \not\in \text{int } \Omega^c$. In other words, there does not exist an $r > 0$ such that $D_r(w) \subset \Omega^c$. Let $\setb{r_n}$ be any sequence of real number converging to 0, then
+	\[ D_{r_n}(w) \cap \Omega \neq \varnothing \]
+	
+	Let $w_n$ be the (not-necessarily unique) points in each intersection, this is a sequence of points in $\Omega$ which converge to $w$. But $w$ cannot be a limit point of $\Omega$, so we conclude that there must be an open disc around $w$ which lies in $\Omega^c$. Thus $\Omega^c$ is open and $\Omega$ is closed.
+\end{proof}
+
+Using this proposition, we can closed any set by adding its limit points. This is known as the closure and denoted $\bar\Omega$.
+
+The boundary of a set $\Omega$ is equal to its closure minus its interior, denoted
+\[ \partial \Omega = \bar\Omega - \text{int } \Omega \]
+For the open and closed discs, their boundary is the circle
+\[ C_r(z_0) = \setb{z \in \cx \mid \abs{z - z_0} = r} \]
+
+A set $\Omega$ is bounded if there exists some $M > 0$ such that $|z| < M$ for all $z \in \Omega$, which implies that $\Omega$ is contained which some large open disc. For bounded sets we define the diameter
+\[ \text{diam } \Omega = \sup_{z, w\in \Omega} \abs{z - w} \]
+
+A set is compact if it is closed and bounded.
+
+\begin{theorem}
+	A set $\Omega \subset \cx$ is compact if and only if every sequence $\setb{z_n} \in \Omega$ has a subsequence that converges to a point in $\Omega$
+\end{theorem}
+\begin{proof}
+	First let $\Omega$ be compact and let $\setb{z_n} \in \Omega$ be some sequence of points. Consider
+	\[ \setb{x_n} = \setb{\Real{z_n}} \in \re \qquad \setb{y_n} = \setb{\Imag{z_n}} \in \re \]
+	
+	These are both bounded sequences in $\re$ since $\Omega$ is bounded, thus they have a convergence subsequence by the Bolzano–Weierstrass Theorem. Suppose the subsequences converge to $x, y \in \re$ respectively, then we can construct a subsequence of $\setb{z_n}$ which converges to $z = x + iy$. 
+	
+	Now suppose $\Omega$ is not compact, which means it is either not closed or not bounded (or both!). If $\Omega$ is not closed, then take some point $w \in \bar\Omega \setminus \Omega$. This is a limit point of $\Omega$ and so comes with a sequence $\setb{w_n} \in \Omega$ which converges to it. This means that every convergent subsequence of $\setb{w_n}$ must also converge to $w$. 
+	
+	If $\Omega$ is not bounded, then we can trivially construct an unbounded sequence. Any subsequence will then never converge. Thus $\Omega$ is compact if and only if every sequence has a convergence subsequence.
+\end{proof}
+
+A more familiar condition for compactness is the following
+
+\begin{theorem}
+	An open covering is a (not necessarily countable) family of open sets $\setb{U_\alpha}$ such that
+	\[ \Omega \subset \bigcup_\alpha U_\alpha \]
+	A set $\Omega$ is compact if and only if every open covering of $\Omega$ has a finite subcovering. 
+\end{theorem}
+\begin{proof}
+	Consider points in $\cx$ as points in $\re^2$, then this follows from Heine-Borel.
+\end{proof}
+
+When we have nested compact sets, we get an interesting result. This will be very useful as be start diving more deeply into complex analysis.
+
+\begin{proposition}
+	Suppose we have a nested sequence of non-empty compact sets in $\cx$
+	\[ \Omega_1 \supset \Omega_2 \supset \Omega_3 \supset \cdots \supset \Omega_n \supset \cdots \]
+	with the property
+	\[ \lim_{n \to \infty} \text{diam } \Omega_n = 0 \]
+	Then there exists a unique $w \in \cx$ such that $w \in \Omega_n$ for all $n$.
+\end{proposition}
+\begin{proof}
+	Pick $z_n \in \Omega_n$, then the condition that the diameter converges to 0 means this is a Cauchy sequence, thus it converges to some point $z$. But each set is compact, so the subsequences must converge to $z$ in every set. 
+	
+	Suppose $w'$ is another point in each $\Omega_n$, then $|w - w'| > 0$ since $w \neq w'$ which violates the assumption that the diameters converge to 0.
+\end{proof}
+
+Finally, an open set $\Omega$ is connected if it cannot be expressed in the form
+\[ \Omega = \Omega_1 \cup \Omega_2 \]
+where $\Omega_1, \Omega_2$ are disjoint nonempty sets. A similar definition applies for closed sets and we call connected sets in $\cx$ regions.
+
+An equivalent and useful definition of connected is as follows: An open set $\Omega$ is connected if and only if any two points in $\Omega$ can be joined by a curve $\gamma$ contained entirely in $\Omega$. This proposition is proved in Exercise 5 below.
+
+\subsection{Complex Functions}
+We can now discuss functions defined on sets of complex numbers.
+
+\begin{definition}[Continuous Functions]
+	Let $f$ be a function defined on an open complex set $\Omega \to \cx$. We say $f$ is continuous if for every $\epsilon > 0$, there exists a $\delta > 0$ such that 
+	\[ |z - z_0| < \delta \thus |f(z) - f(z_0)| < \epsilon \quad \forall z \in \Omega \]
+	Equivalently, for every sequence $\setb{z_n} \in \Omega$ which converges to $z_0$, the sequence $\setb{f(z_n)} \in \cx$ must converge to $f(z_0)$.
+\end{definition}
+
+We say that a function in continuous on a set if it is continuous at every point of that set. We've previously established that convergence in $\cx$ is identical to that of $\real$, so a complex function is continuous if and only it is continuous if viewed as a function of two real variables. As expected, sum and products of continuous functions will remain continuous in $\cx$.
+
+\begin{theorem}
+	A continuous function on a compact set $\Omega$ is bounded and will achieve both a maximum and minimum on $\Omega$. 
+\end{theorem}
+
+We now introduce a central idea in complex analysis, something specific to complex functions.
+
+\begin{definition}[Holomorphic Functions]
+	Let $f$ be a function $f: \Omega \to \cx$, then $f$ is holomorphic at the point $z_0 \in \Omega$ if the limit
+	\[ f'(z_0) = \lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h} \]
+	exists where $h \neq 0 \in \cx$ and $z_0 + h \in \Omega$. The second condition is required for the quotient to be defined. This limit is known as the derivative of $f$ at $z_0$.
+\end{definition}
+
+We say that $f$ is holomorphic on an open set $\Omega$ if it is holomorphic on every point $z \in \Omega$. We say $f$ is holomorphic on a closed set $C$ if it is holomorphic on some open set which contains $C$. Finally, if $f$ is holomorphic on all of $\cx$, then we say it is entire. The terms regular, complex differentiable, and analytic are sometimes used in place of the term holomorphic.
+
+\begin{example}
+	All polynomials are entire,
+	\[ p(z) = a_0 + a_1z + a_2z^2 + \cdots + a_nz^n \thus p'(z) = a_1 + 2a_2 z + \cdots + n a_nz^{n-1} \]
+	The function $1/z$ is holomorphic on any open set of $\cx$ which does not contain the origin
+	\[ f(z) = \frac{1}{z} \thus f'(z) = -\frac{1}{z^2} \]
+\end{example}
+
+\begin{example}
+	The function $f(z) = \bar z$ is not holomorphic, the limit quotient is
+	\[ f'(z) = \lim_{h \to 0} \frac{\bar{z + h} - \bar z}{h} = \lim_{h \to 0} \frac{\bar h}{h} \]
+	The final limit does not exist, which we can see by taking $h$ first to be real and then purely imaginary (we get 1 and -1 as limit respectively).
+\end{example}
+
+While we won't prove them, it is worth noting that all the standard derivative rules apply to holomorphic functions. By further examining the different quotient, we see that $f$ is holomorphic at $z_0 \in \Omega$ if and only if there exists a complex number $a$ such that
+\[ f(z_0 + h) - f(z_0) - ah = h \psi(h) \qquad \lim_{h \to 0} \psi(h) = 0 \]
+where $\psi$ is a function defined for small $|h|$. We see that $a$ then must be $f'(z_0)$ and this formulation shows that $f$ must be continuous if it is holomorphic.
+
+The notion of complex differentiability is very different from the notion of differentiability for a function of two real variables. 
+
+\begin{example}
+	Returning to the $f(z) = \bar z$ example, as a map $\re^2 \to \re^2$ this is
+	\[ f(x, y) = (x, -y) \]
+	and its derivative is a linear map, the Jacobian:
+	\[ f'(x, y) = \det \mathbf J_f(x,y) \mqty[x \\ y] = \det \mqty[1 & 0 \\ 0 & -1] \mqty[x \\ y] = (x, -y) \]
+	So as a real function, $f$ is infinitely differentiable. But as a complex function, it is not differentiable at all, the existence of a real derivative does not mean $f$ is holomorphic and vice versa.
+\end{example}
+
+%%%
+
+\begin{definition}[Cauchy-Riemann Equations]
+	The link between real and complex derivatives are these equations. Let $f = u + iv$, then the Cauchy-Riemann equations are
+	\[ \pdv{u}{x} = \pdv{v}{y} \qquad \pdv{u}{y} = -\pdv{v}{x} \]
+	When $u,v$ are the real and complex parts of a function, we frequently define the operators
+	\[ \pdv{z} = \frac{1}{2} \qty( \pdv{x} + \frac{1}{i} \pdv{y}) \qquad \pdv{\bar z} = \frac{1}{2} \qty( \pdv{x} - \frac{1}{2} \pdv{y}) \]
+\end{definition}
+
+Now we may give the relationship between holomorphic functions and the real derivatives of its real and imaginary components.
+
+\begin{theorem}
+	If $f$ is holomorphic at $z_0$, then
+	\[ \pdv{f}{\bar z}(z_0) = 0 \qquad f'(z_0) = \pdv{f}{z}(z_0) = 2\pdv{u}{z}(z_0) \]
+	If we write $F(x, y) = f(x + iy) = f(z)$, then $F$ is real differentiable
+	\[ \det \mathbf J_F(x_0, y_0) = \abs{f'(z_0)}^2\]
+	
+	Conversely, let $f$ be a function from an open set $\Omega \to \cx$. If $u, v$ are continuously differentiable and satisfy the Cauchy-Riemann equations on $\Omega$, then $f$ is holomorphic on $\Omega$ with derivative
+	\[ f'(z) = \pdv{f}{z} \]
+\end{theorem}
+\begin{proof}
+	%%%
+\end{proof}
+
+\subsection{Power Series}
+
+\newpage 
+\subsection{Integration}
+
+\newpage 
+\subsection{Exercises}
+
+% 1
+\begin{exercise} \hfill
+	\begin{enumerate}[label=\alph*)]
+		\item If $|z - z_1| = |z - z_2|$, then we have the set of points equidistant from $z_1, z_2$. On the complex plane this is the line midpoint perpendicular to the line segment connecting $z_1$ and $z_2$. 
+		\item If $1/z = \bar z$, then $z\bar z = |z|^2 = 1$. This is a unit circle.
+		\item $\Real{z} = 3$ is just a vertical line at $x = 3$.
+		\item $\Real{z} > c$ is a vertical region to the right of the vertical line $x = 3$ but not including it. The set $\Real{z} \geq c$ would include that line.
+		\item Suppose we decompose each complex number as
+		\[ a = a_1 + i a_2 \qquad b = b_1 + i b_2 \qquad z = x + i y \]
+		Then the condition becomes
+		\[ a_1 x - a_2 y + b_1 > 0 \thus y < \frac{a_1}{a_2} x + \frac{b_1}{a_2} \]
+		
+		This is the shaded region below a line, not including that line. If $b$ is purely imaginary, then the line will pass through the origin. The line is horizontal if $a$ is purely imaginary and vertical if $a$ is real. If $a$ is zero, then either we shade the entire plane if $b$ has a positive real part or nothing otherwise.
+		\item Letting $z = x + iy$, this is the region
+		\[ x^2 + y^2 = x + 1 \]
+		which is a circle slightly right of center with radius $\sqrt{5}/2$
+		\item $\Imag{z} = c$ is a horizontal line at $y = c$.
+	\end{enumerate}
+\end{exercise}
+
+% 2
+\begin{exercise}
+	Suppose $z = z_1 + iz_2, w = w_1 + iw_2$, then it is straight-forward to verify
+	\begin{align*}
+		\vbrack{z,w} &= z_1 w_2 + z_2 w_1 \\
+		&= \frac{1}{2}( z_1w_1 - iz_1w_2 + iz_2w_1 + z_2w_2 + z_1w_1 + iz_1w_2 - iz_2w_1 + z_2w_2 ) \\
+		&= \frac{1}{2}( (z,w) + (w,z) ) = \frac{1}{2}( (z,w) + \bar{(z,w)} ) \\
+		&= \Real{z,w}
+	\end{align*}
+\end{exercise}
+
+% 3
+\begin{exercise}
+
+\end{exercise}
+
+% 4
+\begin{exercise}
+
+\end{exercise}
+
+% 5
+\begin{exercise}
+
+\end{exercise}
+
+% 6
+\begin{exercise}
+
+\end{exercise}
+
+% 7
+\begin{exercise}
+
+\end{exercise}
+
+% 8
+\begin{exercise}
+
+\end{exercise}
+
+% 9
+\begin{exercise}
+
+\end{exercise}
+
+% 10
+\begin{exercise}
+
+\end{exercise}
+
+% 11
+\begin{exercise}
+
+\end{exercise}
+
+% 12
+\begin{exercise}
+
+\end{exercise}
+
+% 13
+\begin{exercise}
+
+\end{exercise}
+
+% 14
+\begin{exercise}
+
+\end{exercise}
+
+% 15
+\begin{exercise}
+
+\end{exercise}
+
+% 16
+\begin{exercise}
+
+\end{exercise}
+
+% 17
+\begin{exercise}
+
+\end{exercise}
+
+% 18
+\begin{exercise}
+
+\end{exercise}
+
+% 19
+\begin{exercise}
+
+\end{exercise}
+
+% 20
+\begin{exercise}
+
+\end{exercise}
+
+% 21
+\begin{exercise}
+
+\end{exercise}
+
+% 22
+\begin{exercise}
+
+\end{exercise}
+
+% 23
+\begin{exercise}
+
+\end{exercise}
+
+% 24
+\begin{exercise}
+
+\end{exercise}
+
+% 25
+\begin{exercise}
+
+\end{exercise}
+
+% 26
+\begin{exercise}
+
+\end{exercise}

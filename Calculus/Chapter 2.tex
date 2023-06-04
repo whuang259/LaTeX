@@ -266,7 +266,7 @@ For more complicated limits we may sometimes use the squeeze (or sandwich) theor
 \begin{theorem}[Squeeze Theorem]
 	Let $f(x), g(x), h(x)$ be functions defined for all $x \neq a$ in an open interval containing $a$. If
 	\[ f(x) \leq g(x) \leq h(x) \]
-	The their limits obey
+	Then their limits obey
 	\[ \lim_{x \to a} f(x) \leq \lim_{x \to a} g(x) \leq \lim_{x \to a} h(x) \]
 	
 	In particular if
@@ -279,12 +279,12 @@ To see how we may use this theorem to solve otherwise impossible limits, conside
 
 \begin{example}
 	Suppose we have a function
-	\[ f(x) = x \cos(\frac{1}{x}) \]
+	\[ f(x) = x^2 \cos(\frac{1}{x}) \]
 	and we wish to evaluate the limit as $x$ goes to 0. We can't use the limit laws because then we'd be dividing by zero, so instead we note that
-	\[ -1 \leq \cos(x) \leq 1 \qquad \text{ and so } \qquad -x \leq f(x) \leq x \]
+	\[ -1 \leq \cos(x) \leq 1 \qquad \text{ and so } \qquad -x^2 \leq f(x) \leq x^2 \]
 	
 	It doesn't matter what's inside the cosine because it will always be between -1 and +1. Thus we just need to compute
-	\[ \lim_{x \to 0} -x = 0 \qquad \lim_{x \to 0} x = 0 \]
+	\[ \lim_{x \to 0} -x^2 = 0 \qquad \lim_{x \to 0} x^2 = 0 \]
 	and we are able to conclude, using the squeeze theorem,
 	\[ \lim_{x \to 0} f(x) = 0 \]
 \end{example}
@@ -301,7 +301,7 @@ Let's see how we can use these two limits to evaluate a deceptively difficult li
 	Consider the function
 	\[ f(x) = \frac{\sin^2(3x)}{\sin(2x)} \]
 	
-	We want to evaluate the limit as $x$ approaches $0$. At first glance, we don't really see much that we can do. After all, both the numerator and denominator goes to zero. However, before we give up and quit math forever, we notice that there is one (indeed the only) thing to do: rewrite the numerator. 
+	We want to evaluate the limit as $x$ approaches $0	$. At first glance, we don't really see much that we can do. After all, both the numerator and denominator goes to zero. However, before we give up and quit math forever, we notice that there is one (indeed the only) thing to do: rewrite the numerator. 
 	\[ f(x) = \frac{1 - \cos^2(3x)}{\sin(2x)} = \frac{(1 + \cos(3x))(1 - \cos(3x))}{\sin(2x)} \]
 	
 	We now remember that we've seen part of this numerator before, it's the same numerator in the limit we first introduced! But we're missing the denominator, furthermore the function instead the cosine is $x$, not $3x$. To fix this, we turn to the old trick: multiply by 1. This also fixes the sine in the denominator
@@ -322,7 +322,7 @@ Let's see how we can use these two limits to evaluate a deceptively difficult li
 At its essence, a function is continuous if you can draw if without picking up your pencil. This means that functions like $x, x^2, \sin(x)$ are continuous while $1/x$ is not. However intuition is never good enough and we need a formal mathematical definition of what it means for a function to be continuous. First, we need to be able to visually tell when a function is discontinuous, this is easy:
 
 % Add some pictures
-There are three ways a function fails to be discontinuous
+There are three ways a function fails to be continuous
 \begin{enumerate}
 	\item A removable (or hole) discontinuity: there is a missing point, the function may or may not be defined there
 	\item A jump discontinuity: the function literally jumps
@@ -397,7 +397,7 @@ Intervals are typically written using interval notation rather than inequalities
 \end{itemize}
 
 So the example above represents the following inequalities (the U symbol is read as union and basically just means to combine all the intervals together)
-\[ 1 < x \text { or } 1 < x < 2 \text{ or } x < 2 \]
+\[ x < 1 \text { or } 1 < x < 2 \text{ or } 2 < x \]
 
 For piecewise functions, we have a notion of one-sided continuity. This is basically just taking the normal definition and replacing the limit with a one-sided one. Here's an example:
 
@@ -457,6 +457,12 @@ Let's see an example of this theorem in action.
 
 \newpage 
 \subsection{Hard Topic: Precise Definition of a Limit}
+\bigskip
+\begin{mdframed}[linewidth=1pt]
+CAUTION: This is a hard topic and will not be covered on the AP exam, in fact it is only lightly touched on in a normal college calculus class. This section is completely optional, proceed at your own risk and sanity.
+\end{mdframed}
+
+
 
 % Introduction to epsilon delta
 % Examples
