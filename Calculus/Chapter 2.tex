@@ -191,7 +191,7 @@ The remaining two interesting points, $x = 6$ and $x = 10$, will be left as an e
 \end{example}
 
 \newpage 
-\subsection{Techniques for Limits}
+\subsection{Noob's Guide to Limits}
 
 Now that we've brute forced our way through a couple limits, it is time to find a way to use those previous results to evaluate new limits. A lot of these laws/rules may seem obvious but it is important to state them nonetheless.
 
@@ -456,15 +456,115 @@ Let's see an example of this theorem in action.
 \end{example}
 
 \newpage 
-\subsection{Hard Topic: Precise Definition of a Limit}
+\subsection{Hard Topic: Limits for the Morbidly Curious}
 \bigskip
 \begin{mdframed}[linewidth=1pt]
 CAUTION: This is a hard topic and will not be covered on the AP exam, in fact it is only lightly touched on in a normal college calculus class. This section is completely optional, proceed at your own risk and sanity.
 \end{mdframed}
 
+If the idea of ``get really really close to a number and that's the limit" doesn't sit right with you, then you've come to the right part of these notes! This section is for the mathematically curious, those that got lost, those that are too nosy for their own good, those that want a peek at ``real mathematics" and ``real proofs," those that want to see the funny mathematical symbols, and everyone in between.
 
+In this section, we introduce the epsilon-delta proof, a standard proof device used in real analysis, the branch of mathematics which encompasses calculus. These proofs give a mathematically rigorous definition of ``close to a number" and allow us to prove beyond a shadow of a doubt that the limit is what we say it is. These are not for the faint of heart and sometimes it is best not to think too hard about this section and return once you are more mathematically mature.
 
 % Introduction to epsilon delta
-% Examples
-% Proving a limit law
-% Very hard example/proof
+To start off the process of actually proving a limit exists, we must ask ourselves: what does it mean for a number to get really close to another number. When we say
+\[ |x - y| < h \]
+we really mean ``$x$ is less than $h$ away from the $y$." If we want to impose the condition that they aren't equal, then we might write
+\[ 0 < |x - y| < h \]
+because if $|x - y| = 0$, then we must have $x = y$. Thus we can examine the ``closeness" of two numbers using absolute values, leading to the precise definition of a limit. It is this definition that mathematicians actually use when discussing limits and their properties.
+
+\begin{definition}[The Limit, for Experts]
+	Let $f(x)$ be a function defined over an open interval containing $a$ and $L$ a real number. We say that the limit as $x$ approaches $a$ of $f(x)$ is equal to $L$, or in symbols
+	\[ \lim_{x \to a} f(x) = L \]
+	if for every $\epsilon > 0$ (Greek letter epsilon) there exists a $\delta > 0$ (Greek delta) such that
+	\[ |x - a| < \delta \thus |f(x) - L| < \epsilon \]
+	In words: if $|x - a| < \delta$, then $|f(x) - L| < \epsilon$.
+\end{definition}
+
+Let's state that last line in more human terms. Basically we are saying that if $x$ is close enough to $a$, then $f(x)$ better be close to $L$: its limit. Essentially when we prove a limit we are playing a game: I give you an $\epsilon$ which is how close I want the function to be to its limit and you give me a $\delta$ which tells me the range of $x$ values for which the function is that close. To prove that this game is always winnable, we need to find a formula for $\delta$ in terms of $\epsilon$. Because the goal of the proof is to find a delta given an epsilon, these are called epsilon-delta ($\epsilon-\delta$) proofs.
+
+\begin{example}
+	Here's a simple example, prove that
+	\[ \lim_{x \to a} x = a \]
+	Let $\epsilon > 0$ and take $\delta = \epsilon$. Then we have the implication
+	\[ |x - a| < \delta \thus |f(x) - a| = |x - a| < \delta = \epsilon \]
+	So we have solved the game because with this strategy we will always get $|f(x) - a| < \epsilon$. Thus we conclude that this is indeed the limit, now with full mathematical confidence.
+\end{example}
+
+This first example is so easy it might feel like you got scammed, so feel free to try a slightly more complicated linear function $f(x) = x + 1$ yourself, if that's too easy try $f(x) = 2x + 1$\footnote{As most math textbooks say: these are left as a exercise to the reader}.
+
+\begin{example}
+	For an example of a limit that doesn't exist, consider a piecewise function
+	\[ f(x) = \begin{cases}
+	-1 \qquad &x \leq 0 \\
+	1 \qquad &x > 0
+	\end{cases} \]
+	We'll take the efficient route and try all numbers $-1 \leq a \leq 1$ all at once by trying to prove
+	\[ \lim_{x \to 0} f(x) = a \]
+	Take $\epsilon = \min(|1 - a|, |1 + a|)$. In other words, compute the distance from $a$ to -1 and $a$ to +1, let $\epsilon$ be the smaller of the two. 
+\end{example}
+
+So to prove that a limit exists, you must find a formula for $\delta$ in terms of $\epsilon$ and to prove that the limit does not exist, you must give an $\epsilon$ for which no $\delta$ can be found. Returning to the game analogy, if the $\delta$ playing has a foolproof strategy to always give a $\delta$ that works, then the limit exists. If $\epsilon$ player has some OP (overpowered for you non-gamers) trump card that literally cannot be beaten, i.e. the $\delta$ player is basically fucked cause he can't do anything, then the limit does not exist.
+
+Most examples are not this easy and involve some unintuitive ``tricks," we will look at some of those next; consider this your second warning to turn back. Otherwise feel free to continue onwards and attempt to further understand proofs; your mileage may vary, success is not guaranteed.
+
+Before we proceed, we must first note a handful of nice inequalities\footnote{A lemma in mathematics is a small result typically proven to be used to prove a more complicated result}. 
+\begin{lemma}[Triangle Inequality]
+	Let $x, y$ be any two real numbers, then
+	\[ |x + y| \leq |x| + |y| \]
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+The reason that this is called the triangle inequality is because if you think of the absolute values as the legs of a triangle\footnote{This makes more sense if $x, y$ are vectors, but you don't know what those are yet}, then the last leg cannot be longer than the sum of the other two leg lengths.
+
+\begin{example}
+	Prove that
+	\[ \lim_{x \to a} \sqrt{x} = \sqrt{a} \]
+\end{example}
+
+\begin{example}
+	Prove that
+	\[ \lim_{x \to a} x^2 = a^2 \]
+\end{example}
+
+\begin{example}
+	Prove that
+	\[ \lim_{x \to a} x^4 = a^4 \]
+\end{example}
+
+By tweaking the definition ever so slightly, we can make it work for one sided limits.
+
+\begin{definition}[One-Sided Limits, for Experts]
+
+\end{definition}
+
+Similar tweaks can be made to get limits as $x$ goes to infinity and limits that \emph{are} infinity.
+
+\begin{definition}[Infinite Limits, for Experts]
+
+\end{definition}
+
+The rest of this section will be dedicated to using the $\epsilon-\delta$ technique to prove results that we took for granted earlier in the section. These proofs will be much harder than the examples we have done thus far as they are now ``full-fledged real proofs." At this point most readers can stop reading, but the curious may venture on and skim through to get a glimpse into real mathematics.
+
+\begin{theorem}[Limit Laws]
+
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\begin{theorem}[Composition of Limits]
+
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\begin{theorem}[Intermediate Value Theorem]
+
+\end{theorem}
+\begin{proof}
+
+\end{proof}

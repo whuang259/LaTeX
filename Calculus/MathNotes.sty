@@ -3,6 +3,8 @@
 \RequirePackage{mathtools, latexsym}
 \RequirePackage{graphicx, parskip}
 
+\RequirePackage{soul, sistyle}
+
 % ===================
 % Formatting
 % ===================
@@ -23,7 +25,10 @@
 	frametitlebackgroundcolor=gray!20,
 	innertopmargin=\topskip
 }
-\mdtheorem[style=theoremstyle]{theorem}{Theorem}
+\mdtheorem[style=theoremstyle]{theorem}{Theorem}[section]
+\mdtheorem[style=theoremstyle]{lemma}[theorem]{Lemma}
+\mdtheorem[style=theoremstyle]{corollary}[theorem]{Corollary}
+\mdtheorem[style=theoremstyle]{proposition}[theorem]{Proposition}
 \mdtheorem[style=theoremstyle]{definition}{Definition}
 
 \mdfdefinestyle{Optional}{

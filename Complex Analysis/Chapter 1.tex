@@ -230,18 +230,42 @@ The notion of complex differentiability is very different from the notion of dif
 	So as a real function, $f$ is infinitely differentiable. But as a complex function, it is not differentiable at all, the existence of a real derivative does not mean $f$ is holomorphic and vice versa.
 \end{example}
 
-%%%
+Consider a general complex function $f = u + iv$ and associate it with a map
+\[ F: \re^2 \to \re^2 \qquad F(x, y) = (u(x,y), v(x,y)) \]
+We say that this function is differentiable at a point $P_0 = (x_0, y_0)$ if
+\[ \lim_{|H| \to 0} \frac{F(P_0 + H) - F(P_0) - J(H)}{|H|} = 0 \]
+in which case $J(H)$ is the derivative of $F$ at $P_0$ and is unique. If both $u, v$ are partial differentiable, then the derivative is given by the Jacobian matrix
+\[ \mathbf J_F(x, y) = \mqty(\pdv*{u}{x} & \pdv*{u}{y} \\ \pdv*{v}{x} & \pdv*{v}{y}) \]
 
+So when we take a real derivative we get a matrix, but when we take a complex derivative we get a complex number. Ideally, there will be some sort of relationship between the two derivatives. When we take the limit of the difference quotient of a complex function, the result should be independent of path. So we can take two paths, one purely real and the other purely imaginary, to connect the complex derivative to real partial derivatives.
+\begin{align*}
+	f'(z_0) &= \lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h} \qquad h \in \re \\
+	&= \lim_{h_1 \to 0} \frac{f(x_0 + h_1, y_0) - f(x_0, y_0)}{h_1} \\
+	&= \pdv{f}{x}\,(z_0) \\
+	f'(z_0) &= \lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h} \qquad h \in \cx \\
+	&= \lim_{h_2 \to 0} \frac{f(x_0, y_0 + h_2) - f(x_0, y_0)}{ih_2} \\
+	&= \frac{1}{i} \pdv{f}{y} \,(z_0) 
+\end{align*}
+where we write $f(z) = f(x, y)$, $z = x + iy$, $h = h_1 + i h_2$.
+
+If $f$ is holomorphic, then these two expressions must be equal and we find
+\[ f'(z) = \pdv{f}{x} = \frac{1}{i} \pdv{f}{y} = -i \pdv{f}{y} \]
+
+Now if we write $f = u + iv$, we find
+\[ \pdv{u}{x} + i \pdv{v}{x} = -i \pdv{u}{y} + \pdv{v}{y} \]
+By separating out the real and imaginary parts, we get a pair of very special (non-trivial) relationships between partial derivatives which link real and complex derivatives.
+
+\newpage 
 \begin{definition}[Cauchy-Riemann Equations]
-	The link between real and complex derivatives are these equations. Let $f = u + iv$, then the Cauchy-Riemann equations are
-	\[ \pdv{u}{x} = \pdv{v}{y} \qquad \pdv{u}{y} = -\pdv{v}{x} \]
+	Let $f = u + iv$, then if $f$ is holomorphic, $u$ and $v$ satisfy the Cauchy-Riemann equations:
+	\[ \pdv{u}{x} = \pdv{v}{y} \qquad \qquad \pdv{u}{y} = -\pdv{v}{x} \]
 	When $u,v$ are the real and complex parts of a function, we frequently define the operators
-	\[ \pdv{z} = \frac{1}{2} \qty( \pdv{x} + \frac{1}{i} \pdv{y}) \qquad \pdv{\bar z} = \frac{1}{2} \qty( \pdv{x} - \frac{1}{2} \pdv{y}) \]
+	\[ \pdv{z} = \frac{1}{2} \qty( \pdv{x} + \frac{1}{i} \pdv{y}) \qquad \pdv{\bar z} = \frac{1}{2} \qty( \pdv{x} - \frac{1}{i} \pdv{y}) \]
 \end{definition}
 
-Now we may give the relationship between holomorphic functions and the real derivatives of its real and imaginary components.
+The first operator simply averages the two equivalent expressions for $f'(z)$ that we found earlier and the second can is just the complex conjugate. Now we may give the relationship between holomorphic functions and the real derivatives of its real and imaginary components.
 
-\begin{theorem}
+\begin{theorem}[Holomorphic vs. Real Differentiable]
 	If $f$ is holomorphic at $z_0$, then
 	\[ \pdv{f}{\bar z}(z_0) = 0 \qquad f'(z_0) = \pdv{f}{z}(z_0) = 2\pdv{u}{z}(z_0) \]
 	If we write $F(x, y) = f(x + iy) = f(z)$, then $F$ is real differentiable
@@ -254,10 +278,13 @@ Now we may give the relationship between holomorphic functions and the real deri
 	%%%
 \end{proof}
 
+\newpage 
 \subsection{Power Series}
+tf is a power series
 
 \newpage 
 \subsection{Integration}
+tf is an integral
 
 \newpage 
 \subsection{Exercises}
