@@ -486,6 +486,7 @@ Let's state that last line in more human terms. Basically we are saying that if 
 \begin{example}
 	Here's a simple example, prove that
 	\[ \lim_{x \to a} x = a \]
+	
 	Let $\epsilon > 0$ and take $\delta = \epsilon$. Then we have the implication
 	\[ |x - a| < \delta \thus |f(x) - a| = |x - a| < \delta = \epsilon \]
 	So we have solved the game because with this strategy we will always get $|f(x) - a| < \epsilon$. Thus we conclude that this is indeed the limit, now with full mathematical confidence.
@@ -499,72 +500,180 @@ This first example is so easy it might feel like you got scammed, so feel free t
 	-1 \qquad &x \leq 0 \\
 	1 \qquad &x > 0
 	\end{cases} \]
-	We'll take the efficient route and try all numbers $-1 \leq a \leq 1$ all at once by trying to prove
-	\[ \lim_{x \to 0} f(x) = a \]
-	Take $\epsilon = \min(|1 - a|, |1 + a|)$. In other words, compute the distance from $a$ to -1 and $a$ to +1, let $\epsilon$ be the smaller of the two. 
+	
+	We'll take the efficient route and try every number at once by trying to prove
+	\[ \lim_{x \to 0} f(x) = a \qquad \text{$a$ any real number ($a \in \re$)} \]
+	Simply take $\epsilon = 1/2$, then for any $\delta > 0$ we will have
+	\[ f\qty(-\frac{\delta}{2}) = -1 \qquad f\qty(\frac{\delta}{2}) = 1 \]
+	Note that by using this choice of $\epsilon$, the open interval $(a - \epsilon, a + \epsilon)$ will include either $-1$, $1$, or neither but never both. Since any choice of $\delta$ will always yield $x$ values which give both $-1$ and $1$, we will never be able to find a value of $\delta$ that makes $f(x)$ close enough to the limit. Since the game is unwinnable, we are forced to conclude that the limit does not exist.
 \end{example}
 
-So to prove that a limit exists, you must find a formula for $\delta$ in terms of $\epsilon$ and to prove that the limit does not exist, you must give an $\epsilon$ for which no $\delta$ can be found. Returning to the game analogy, if the $\delta$ playing has a foolproof strategy to always give a $\delta$ that works, then the limit exists. If $\epsilon$ player has some OP (overpowered for you non-gamers) trump card that literally cannot be beaten, i.e. the $\delta$ player is basically fucked cause he can't do anything, then the limit does not exist.
+So to prove that a limit exists, you must find a formula for $\delta$ in terms of $\epsilon$ and to prove that the limit does not exist, you must give an $\epsilon$ for which no $\delta$ can be found. Returning to the game analogy, if the $\delta$ playing has a foolproof strategy to always give a $\delta$ that works, then the limit exists. If $\epsilon$ player has some OP (overpowered for you non-gamers) trump card that literally cannot be beaten, i.e. the $\delta$ player is basically screwed cause he can't do anything, then the limit does not exist.
 
 Most examples are not this easy and involve some unintuitive ``tricks," we will look at some of those next; consider this your second warning to turn back. Otherwise feel free to continue onwards and attempt to further understand proofs; your mileage may vary, success is not guaranteed.
 
-Before we proceed, we must first note a handful of nice inequalities\footnote{A lemma in mathematics is a small result typically proven to be used to prove a more complicated result}. 
+Before we proceed, we must first note a useful inequality\footnote{In mathematics, a lemma is a small result typically proven for the purpose of using it as a building block for proving more complicated results such as theorems}. 
 \begin{lemma}[Triangle Inequality]
 	Let $x, y$ be any two real numbers, then
 	\[ |x + y| \leq |x| + |y| \]
 \end{lemma}
 \begin{proof}
-
+	Use the following property of absolute values
+	\[ -|x| \leq x \leq |x| \qquad -|y| \leq y \leq |y| \]
+	Now add them together to get
+	\[ -(|x| + |y|) \leq x + y \leq |x| + |y| \]
+	But this inequality is the same thing as saying
+	\[ |x + y| \leq |x| + |y| \]
+	which is what we wanted to prove.
 \end{proof}
 
-The reason that this is called the triangle inequality is because if you think of the absolute values as the legs of a triangle\footnote{This makes more sense if $x, y$ are vectors, but you don't know what those are yet}, then the last leg cannot be longer than the sum of the other two leg lengths.
-
-\begin{example}
-	Prove that
-	\[ \lim_{x \to a} \sqrt{x} = \sqrt{a} \]
-\end{example}
+The reason that this is called the triangle inequality is because if you think of the absolute values as the lengths of legs of a triangle\footnote{This makes more sense if $x, y$ are vectors, but you don't know what those are yet}, then the inequality just state that the length of the last leg cannot be longer than the sum of the other two leg lengths. If you think about this geometrically, it should make sense pretty fast.
 
 \begin{example}
 	Prove that
 	\[ \lim_{x \to a} x^2 = a^2 \]
+	
+	Let $\epsilon > 0$, then
+	\[ |x - y| < \delta \thus |x^2 - a^2| = |x - a||x + a| < \delta |x + a| = \epsilon \]
+	This would imply that we take $\delta = \epsilon / |x + a|$ but that won't do; $\delta$ cannot depend on $x$, only $\epsilon$ and constants. The issue is that we have a bound for $|x - a|$ but not $|x + a|$, we'll have to cleverly work around this. 
+	
+	Suppose that $x$ is ``close enough" to $a$, that is, suppose $\delta < 1$. Then
+	\[ |x - a| < 1 \thus -1 < x - a < 1 \thus -1 + 2a < x + a < 1 + 2a \]
+	The absolute value of $|x + a|$ is thus bounded by the absolute values of the two sides of the inequality. But the those aren't equal. To avoid making promises we can't keep, we must take the bigger of the two. Luckily we have the triangle inequality to help use out
+	\[ |2a + 1| \leq |2a| + |1| = 2|a| + 1 \]
+	\[ |2a - 1| \leq |2a| + |-1| = 2|a| + 1 \]
+	So now we have the ultimate bound which let's use confidently say that if $\delta < 1$
+	\[ |x - a| < \delta < 1 \thus |x + a| < 2|a| + 1 \]
+	
+	Going back to the problem at hand, we can use this new bound to get
+	\[ |x - a| \leq \delta \thus |x^2 - a^2| < \delta (2|a| + 1) < \epsilon \]
+	The $x$ is gone now! But before we write down the final answer, we have to remember that the only reason we got to this point is by assuming $\delta < 1$. If $a$ or $\epsilon$ is too large, then we risk violating this assumption. For this reason our answer will be a bit funny looking
+	\[ \delta = \min\qty(1, \frac{\epsilon}{2|a| + 1}) \]
+	
+	I will leave it to you, the motivated and intelligent reader, to verify that the following limit can be proven using the $\delta$ which I shall provide you:
+	\[ \lim_{x \to a} x^4 = a^4 \qquad \delta = \min\qty(1, \frac{1}{(2|a| + 1)(2a^2 + 2|a| + 1)}) \]
 \end{example}
+
+This is the first example in which we first impose an upper bound on $\delta$ and then use that to get a refinement which depends on $\epsilon$. This is a common pattern for harder limits, we'll see it again in the next example.
 
 \begin{example}
 	Prove that
-	\[ \lim_{x \to a} x^4 = a^4 \]
+	\[ \lim_{x \to a} \sqrt{x} = \sqrt{a} \qquad a > 0 \]
+	
+	Let $\epsilon > 0$, then
+	\[ |x - a| < \delta \thus |\sqrt{x} - \sqrt{a}| = \frac{|x - a|}{\sqrt{x} + \sqrt{a}} < \frac{\delta}{\sqrt{x} + \sqrt{a}} = \epsilon \]
+	So just like before we need to bound something with an $x$, except this time it's on the bottom. However we now have the added complexity that we cannot take the square root of a negative number. We can no longer just take $\delta < 1$ because what if $a$ was $0.5$? Instead, we'll have a variable upper bound
+	\[ |x - a| < \delta < \frac{a}{2} \thus \frac{a}{2} < x < \frac{3a}{a} \thus \sqrt{\frac{a}{2}} + \sqrt{a} < \sqrt{x} + \sqrt{a} < \sqrt{\frac{3a}{2}} + \sqrt{a} \]
+	
+	When we divide, the lower bound becomes the new upper bound. This makes more sense when I write it out, I promise:
+	\[ \sqrt{\frac{a}{2}} + \sqrt{a} < \sqrt{x} + \sqrt{a} \thus \frac{1}{\sqrt{x} + \sqrt{a}} < \frac{1}{\sqrt{a/2} + \sqrt{a}} < \frac{1}{\sqrt{a}} \]
+	Now we return to the original problem and substitute this bound
+	\[ |\sqrt{x} - \sqrt{a}| = \frac{\delta}{\sqrt{x} + \sqrt{a}} < \frac{\delta}{\sqrt{a}} = \epsilon \]
+	Thus for any $\epsilon > 0$, we can choose
+	\[ \delta = \min(1, \epsilon\sqrt{a}) \]
+	to make the proof work.
 \end{example}
 
 By tweaking the definition ever so slightly, we can make it work for one sided limits.
 
 \begin{definition}[One-Sided Limits, for Experts]
-
+	Let $f$ be a function defined over an open interval $(a, b)$, then the limit as we approach $a$ from the left is equal to $L$, or in symbols
+	\[ \lim_{x \to a^+} f(x) = L \]
+	If for every $\epsilon > 0$ there exists a $\delta > 0$ such that
+	\[ 0 < x - a < \delta \thus |f(x) - L| < \epsilon \]
+	Notice that this definition forces $x > a$, we can define a right handed limit ($\lim_{x \to b^-}$) by swapping the order of the inequality
+	\[ -\delta < x - b < 0 \thus |f(x) - L| < \epsilon\]
 \end{definition}
 
 Similar tweaks can be made to get limits as $x$ goes to infinity and limits that \emph{are} infinity.
 
 \begin{definition}[Infinite Limits, for Experts]
-
+	The limit as $x$ goes to $a$ is infinity, or in symbols
+	\[ \lim_{x \to a} f(x) = \infty \]
+	If for every $M > 0$ there exists a $\delta > 0$ such that
+	\[ |x - a| < \delta \thus f(x) > M \]
+	Taking $M < 0$ and swapping the inequality gives the definition for negative infinity. 
+	
+	The limit as $x$ goes to $\infty$ is $L$, or in symbols
+	\[ \lim_{x \to \infty} f(x) = L \]
+	If for every $\epsilon > 0$, there exists an $M > 0$ such that
+	\[ x > M \thus |f(x) - L| < \epsilon \]
+	Once again swapping $M$ to negative and changing the inequality gives the limit to $-\infty$.
 \end{definition}
 
-The rest of this section will be dedicated to using the $\epsilon-\delta$ technique to prove results that we took for granted earlier in the section. These proofs will be much harder than the examples we have done thus far as they are now ``full-fledged real proofs." At this point most readers can stop reading, but the curious may venture on and skim through to get a glimpse into real mathematics.
+The rest of this section will be dedicated to using the $\epsilon-\delta$ technique to prove results that we took for granted earlier in the section. These proofs will be much harder than the examples we have done thus far as they are now ``full-fledged real proofs." At this point most readers can stop reading, but the daring may venture on and/or skim through to get a glimpse into real mathematics.
 
 \begin{theorem}[Limit Laws]
-
+	I won't prove all of the limit laws, but here's a couple to satisfy your curiosity. Let
+	\[ \lim_{x \to a} f(x) = L \qquad \lim_{x \to a} g(x) = M \]
+	\begin{enumerate}
+		\item Sum law
+		\[ \lim_{x \to a} f(x) \pm g(x) = \lim_{x \to a} f(x) \pm \lim_{x \to a} g(x) = L \pm M \]
+		\item Product law,
+		\[ \lim_{x \to a} f(x)g(x) = \qty(\lim_{x \to a} f(x)) \qty(\lim_{x \to a} g(x)) = LM \]
+		\item Quotient law, if $M \neq 0$
+		\[ \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} = \frac{L}{M} \]
+	\end{enumerate}
 \end{theorem}
+\newpage 
 \begin{proof}
-
+	1) Since the limits exist, for any $\epsilon > 0$ there exists $\delta_1, \delta_2 > 0$ such that
+	\[ |x - a| < \delta_1 \thus |f(x) - L| < \frac{\epsilon}{2} \]
+	\[ |x - a| < \delta_2 \thus |g(x) - M| < \frac{\epsilon}{2} \]
+	Let $\delta = \min(\delta_1, \delta_2$ so that both inequalities can be true at the same time. Then $|x - a| < \delta$ implies
+	\[ |(f(x) + g(x)) - (L + M)| \leq |f(x) - L| + |g(x) - M| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \]
+	A similar proof applies for subtraction.
+	
+	2) First we investigate the absolute value
+	\begin{align*}
+		|f(x)g(x) - LM| &= |f(x) (g(x) - M) + M(f(x) - L)| \\
+		&\leq |f(x)| |g(x) - M| + |M| |f(x) - L| 
+	\end{align*}
+	Two of the four resulting absolute values seem familiar, they come from the existing limits. We can choose any bound for them and there will exist $\delta$ to make it happen. But the $|f(x)|$ is a bit concerning, here is how we deal with it.
+	
+	Suppose $|f(x) - L| < 1$, then
+	\[ -1 + L \leq f(x) \leq 1 + L \thus |f(x)| \leq 1 + |L| \]
+	Using the fact from earlier that we can choose arbitrary bounds
+	\[ |f(x)g(x) - LM| \leq |f(x)| |g(x) - M| + |M| |f(x) - L| \leq \frac{\epsilon_1}{1 + |L|} + |M| \epsilon_2 \]
+	We might be tempted to choose something like $\epsilon_2 = 1 / |M|$ but we can't be certain that $|M| \neq 0$. What we do know, however, is that $|M|$ will never be negative, this will help guide our decision.
+	
+	The full proof now proceeds as follows, take $\epsilon > 0$. Because the limits of $f, g$ are known, there exists $\delta_1, \delta_2 > 0$ such that
+	\[ |x - a| < \delta_1 \thus |f(x) - L| < \min\qty(1, \frac{\epsilon}{2(1 + |L|)}) = \epsilon_1 \]
+	\[ |x - a| < \delta_2 \thus |g(x) - M| < \frac{\epsilon}{2(1 + |M|)} = \epsilon_2 \]
+	The min comes from our assumption that $|f(x) - L| < 1$. Now take $\delta = \min(\delta_1, \delta_2)$, then for $|x - a| < \delta$ we have
+	\begin{align*}
+		|f(x)g(x) - LM| &< \qty( 1 + |L| ) \qty( \frac{\epsilon}{2(1 + |L|)} ) + |M| \qty( \frac{\epsilon}{2(1 + |M|)} ) \\
+		&< \frac{\epsilon}{2} + \frac{\epsilon}{2} \qty(\frac{|M|}{1 + |M|}) \\
+		&< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+	\end{align*}
+	
+	3) Since we just proved the power law, it suffices to prove that
+	\[ \lim_{x \to a} \frac{1}{g(x)} = \frac{1}{M} \]
+	
+	Just like before, we first investigate the absolute value
+	\[ \abs{\frac{1}{g(x)} - \frac{1}{M}} = \frac{|g(x) - M}{|g(x)||M|} < \frac{\epsilon_1}{|g(x)||M|} \]
+	We have already used the fact that the numerator is something that can be arbitrarily bounded, we just need to investigate the $|g(x)|$ in the denominator. Since it's in the denominator we have to impose the additional condition that $g(x) \neq 0$, to do so we simply assume
+	\begin{align*}
+		|g(x) - M| < \frac{|M|}{2} &\thus \frac{M}{2} < g(x) < \frac{3M}{2} \\
+		&\thus \frac{|M|}{2} < |g(x)| < \frac{3|M|}{2} \thus \abs{\frac{1}{g(x)}} < \frac{2}{|M|}
+	\end{align*}
+	which is possible because $M \neq 0$. Our original inequality now simplifies to
+	\[ \abs{\frac{1}{g(x)} - \frac{1}{M}} \leq \frac{2\epsilon_1}{|g(x)||M|} < \frac{2\epsilon_1}{|M|^2} \]
+	The full proof now proceeds as follows, for every $\epsilon > 0$ there exists a $\delta > 0$ such that
+	\[ |x - a| < \delta \thus |g(x) - M| < \min\qty(\frac{|m|}{2}, \frac{\epsilon M^2}{2}) \]
+	\[ \abs{\frac{1}{g(x)} - \frac{1}{M}} < \qty(\frac{2}{M^2}) \qty(\frac{\epsilon M^2}{2}) = \epsilon \]
+	
 \end{proof}
 
 \begin{theorem}[Composition of Limits]
-
+	Let $f(x)$ be a function such that $\lim_{x \to a} f(x) = L$ and suppose $g(x)$ is continuous at $L$, then
+	\[ \lim_{x \to a} g(f(x)) = g\qty(\lim_{x \to a} f(x)) = g(L) \]
 \end{theorem}
 \begin{proof}
-
-\end{proof}
-
-\begin{theorem}[Intermediate Value Theorem]
-
-\end{theorem}
-\begin{proof}
-
+	Continuity at $L$ means that
+	\[ \lim_{x \to L} g(x) = g(L) \]
+	Let $\epsilon > 0$, then there exists a $\delta_1 > 0$ such that
+	\[ |x - L| < \delta_1 \thus |g(x) - g(L)| < \epsilon \]
+	Let $\epsilon_1 = \delta_1 > 0$, then there exists a $\delta > 0$ such that
+	\[ |x - a| < \delta \thus |f(x) - L| < \epsilon_1 = \delta_1 \thus |g(f(x)) - g(L)| < \epsilon \]
 \end{proof}

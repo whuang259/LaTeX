@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  5 JUN 2023 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  8 JUN 2023 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,19 +803,19 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 276.
- [12] [13] [14]
+ [12] [13] [14] [15]
 Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
-ut line 293.
- [15] [16]) [17]
+ut line 316.
+ [16] [17]) [18]
 (D:\Documents\TexMaker\Complex Analysis\build\Complex Analysis.aux
 (D:\Documents\TexMaker\Complex Analysis\build\Chapter 1.aux))
 Package rerunfilecheck Info: File `"Complex Analysis".out' has not changed.
 (rerunfilecheck)             Checksum: EDE02CC63EE10AC23700836B73E9D139;838.
  ) 
 Here is how much of TeX's memory you used:
- 14294 strings out of 476331
- 233318 string characters out of 5786821
- 1864660 words of memory out of 5000000
+ 14295 strings out of 476331
+ 233325 string characters out of 5786821
+ 1869660 words of memory out of 5000000
  34383 multiletter control sequences out of 15000+600000
  523006 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -837,9 +837,9 @@ KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/William/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/William/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "D:\Documents\TexMaker\Complex Analysis\build\Complex Analysi
-s.pdf" (17 pages, 225660 bytes).
+s.pdf" (18 pages, 229448 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

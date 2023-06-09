@@ -28,7 +28,7 @@ In the figure below, we see graphically how we can get to a tangent line by firs
 \end{definition}
 
 \begin{example}
-	Let take perhaps the simplest example (asides from constants) known to man, a linear function
+	Let's take perhaps the simplest example (asides from constants) known to man, a linear function
 	\[ f(x) = x \]
 	Then the derivative, the slope of the tangent line, at any point $x = a$ is
 	\[ f'(a) = \lim_{h \to 0} \frac{(a + h) - a}{h} = \lim_{h \to 0} \frac{h}{h} = \lim_{h \to 0} 1 = 1 \]
@@ -54,7 +54,7 @@ In the figure below, we see graphically how we can get to a tangent line by firs
 	This limit is slightly more involved
 	\begin{align*}
 		f'(a) &= \lim_{h \to 0} \frac{\sqrt{a + h} - \sqrt{a}}{h} \\
-		&= \lim_{h \to 0} \frac{a + h - a}{h (\sqrt{a + h} + \sqrt{a}} = \lim_{h \to 0} \frac{h}{h(\sqrt{a + h} + \sqrt{a}} \\
+		&= \lim_{h \to 0} \frac{a + h - a}{h (\sqrt{a + h} + \sqrt{a})} = \lim_{h \to 0} \frac{h}{h(\sqrt{a + h} + \sqrt{a})} \\
 		&= \lim_{h \to 0} \frac{1}{\sqrt{a + h} + \sqrt{a}} = \frac{1}{\sqrt{a} + \sqrt{a}} \\
 		&= \frac{1}{2 \sqrt{a}}
 	\end{align*}
@@ -69,12 +69,13 @@ Sometimes you might hear a derivative referred to as an \emph{instantaneous rate
 	\[ y(t) = -5t(t - 2) = 0 \thus t = 0, 2 \]
 	$t = 0$ is when we first yeet the ball, so $t = 2$ is when it comes back down. Now we can do the limit
 	\begin{align*}
-		v(t) &= \lim_{h \to 0} \frac{(-5(2 + h)^2 + 10(2 + h)) - (-5(2)^2 + 10(2))}{h} \\
+		v(2) = y'(2) &= \lim_{h \to 0} \frac{y(t + h) - y(t)}{h} \\
+		&= \lim_{h \to 0} \frac{(-5(2 + h)^2 + 10(2 + h)) - (-5(2)^2 + 10(2))}{h} \\
 		&= \lim_{h \to 0} \frac{-5(4 + 4h + h^2) + 20 + 10h - 0}{h} \\
 		&= \lim_{h \to 0} \frac{-10h - 5h^2}{h} = \lim_{h \to 0} -10 - 5h \\
 		&= -10
 	\end{align*}
-	For that have done some physics before may notice that I set up this problem such that we throw the ball up in the air with speed $\SI{10}{m/s}$ (and rounded the acceleration due to gravity to $\SI{10}{m/s^2}$). The fact that the ball hits the ground exactly as fast as we threw it up is a neat result and you verify that this is the case for other initial velocities as well.
+	For that have done some physics before may notice that I set up this problem such that we throw the ball up in the air with speed $\SI{10}{m/s}$ (and rounded the acceleration due to gravity to $\SI{10}{m/s^2}$). The fact that the ball hits the ground exactly as fast as we threw it up is a neat result and you can verify that this is the case for other initial velocities as well.
 \end{example}
 
 \newpage 

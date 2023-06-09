@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="3">
-    <document line="447" bookmark1="0" master="false" hasfocus="false" file="D:\Documents\TexMaker\Calculus\Chapter 2.tex" bookmark3="0" bookmark2="0"/>
-    <document line="0" bookmark1="0" master="true" hasfocus="true" file="D:/Documents/TexMaker/Calculus/Calculus Club Notes.tex" bookmark3="0" bookmark2="0"/>
-    <document line="33" bookmark1="0" master="false" hasfocus="false" file="D:/Documents/TexMaker/Calculus/MathNotes.sty" bookmark3="0" bookmark2="0"/>
+    <document bookmark1="0" bookmark3="0" hasfocus="true" bookmark2="0" file="D:/Documents/TexMaker/Calculus/Chapter 3.tex" master="false" line="36"/>
+    <document bookmark1="0" bookmark3="0" hasfocus="false" bookmark2="0" file="D:/Documents/TexMaker/Calculus/Calculus Club Notes.tex" master="true" line="20"/>
+    <document bookmark1="0" bookmark3="0" hasfocus="false" bookmark2="0" file="D:/Documents/TexMaker/Calculus/MathNotes.sty" master="false" line="30"/>
 </TexmakerSession>

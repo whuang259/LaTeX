@@ -216,7 +216,7 @@ We say that $f$ is holomorphic on an open set $\Omega$ if it is holomorphic on e
 	The final limit does not exist, which we can see by taking $h$ first to be real and then purely imaginary (we get 1 and -1 as limit respectively).
 \end{example}
 
-While we won't prove them, it is worth noting that all the standard derivative rules apply to holomorphic functions. By further examining the different quotient, we see that $f$ is holomorphic at $z_0 \in \Omega$ if and only if there exists a complex number $a$ such that
+While we won't prove them, it is worth noting that all the standard derivative rules apply to holomorphic functions. By further examining the difference quotient, we see that $f$ is holomorphic at $z_0 \in \Omega$ if and only if there exists a complex number $a$ such that
 \[ f(z_0 + h) - f(z_0) - ah = h \psi(h) \qquad \lim_{h \to 0} \psi(h) = 0 \]
 where $\psi$ is a function defined for small $|h|$. We see that $a$ then must be $f'(z_0)$ and this formulation shows that $f$ must be continuous if it is holomorphic.
 
@@ -275,7 +275,30 @@ The first operator simply averages the two equivalent expressions for $f'(z)$ th
 	\[ f'(z) = \pdv{f}{z} \]
 \end{theorem}
 \begin{proof}
-	%%%
+	Write $f = u + iv$, if $f$ is holomorphic then we can use the Cauchy-Riemann equations to write
+	\begin{align*}
+		\pdv{f}{\bar z} &= \frac{1}{2} \qty( \pdv{f}{x} - \frac{1}{i} \pdv{f}{y} ) \\
+		&= \frac{1}{2} \qty( \pdv{u}{x} + i \pdv{v}{x} - \frac{1}{i} \pdv{u}{y} - \pdv{v}{y} ) \\
+		&= \frac{1}{2} \qty( \pdv{u}{x} + i \pdv{v}{x} + i\qty(-\pdv{v}{x}) - \pdv{u}{x} ) = 0
+	\end{align*}
+	
+	The other equality follows the same way
+	\begin{align*}
+	 f' = \pdv{f}{z} &= \frac{1}{2} \qty( \pdv{f}{x} - \frac{1}{i} \pdv{f}{y} ) \\
+	 &= \frac{1}{2} \qty( \pdv{u}{x} + i \pdv{v}{x} + \frac{1}{i} \pdv{u}{y} + \pdv{v}{y} ) \\
+	 &= \pdv{u}{x} + i \pdv{v}{x} = \pdv{u}{x} + \frac{1}{i} \pdv{u}{y} = 2 \pdv{u}{z}
+	\end{align*}
+	
+	By once again using the Cauchy-Riemann equations,
+	\[ \det \mathbf J_F(x_0, y_0) = \pdv{u}{x} \pdv{v}{y} - \pdv{v}{x} \pdv{u}{y} = \qty(\pdv{u}{x})^2 + \qty(\pdv{u}{y})^2 = \abs{2\pdv{u}{z}}^2 = \abs{f'(z_0)}^2 \]
+	
+	Now conversely suppose that $f = u + iv$ is a complex function defined on an open set. Recall the alternate definition of a derivative and use it to write
+	\[ u(x_1 + h_1, y + h_2) - u(x, y) = \pdv{u}{x} h_1 + \pdv{u}{y} h_2 + |h|\psi_1(h) \]
+	\[ v(x_1 + h_1, y + h_2) - v(x, y) = \pdv{v}{x} h_1 + \pdv{v}{y} h_2 + |h|\psi_2(h) \]
+	where $\psi_i(h) \to 0$ and $h = h_1 + ih_2$. We can combine the two using Cauchy-Riemann equations
+	\[ f(z + h) - f(z) = \qty(\pdv{u}{x} - i \pdv{u}{y}) h + |h| \psi(h) \]
+	where now $\psi(h) = \psi_1(h) + i\psi(h) \to 0$. This implies $f$ is holomorphic (as we've recovered the derivative definition) and that the derivative is
+	\[ f'(z) = \pdv{u}{x} - i \pdv{u}{y} = 2\pdv{u}{z} = \pdv{f}{z} \]
 \end{proof}
 
 \newpage 
