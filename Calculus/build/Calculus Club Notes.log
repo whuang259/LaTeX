@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  8 JUN 2023 21:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  13 JUN 2023 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,7 +906,19 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 28.
- [27 <./images/Figure 3.1.1.png>] [28]) [29]
+ [27 <./images/Figure 3.1.1.png>] [28]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 87.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 89.
+<images/Figure 3.1.2.png, id=304, 365.11406pt x 249.18094pt>
+File: images/Figure 3.1.2.png Graphic file (type png)
+<use images/Figure 3.1.2.png>
+Package pdftex.def Info: images/Figure 3.1.2.png  used on input line 94.
+(pdftex.def)             Requested size: 365.11316pt x 249.18031pt.
+ [29 <./images/Figure 3.1.2.png>] [30]) [31]
 (D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
 (D:\Documents\TexMaker\Calculus\build\Chapter 2.aux)
 (D:\Documents\TexMaker\Calculus\build\Chapter 3.aux))
@@ -914,10 +926,10 @@ Package rerunfilecheck Info: File `"Calculus Club Notes".out' has not changed.
 (rerunfilecheck)             Checksum: 74A8328DD8441F4BC743D928560CDADD;2296.
  ) 
 Here is how much of TeX's memory you used:
- 14772 strings out of 476331
- 240920 string characters out of 5786821
+ 14783 strings out of 476331
+ 241144 string characters out of 5786821
  1866660 words of memory out of 5000000
- 34809 multiletter control sequences out of 15000+600000
+ 34815 multiletter control sequences out of 15000+600000
  528143 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,14n,91p,817b,623s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -947,9 +959,9 @@ ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/William/AppData/Local/Programs
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/William/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.pdf
-" (29 pages, 655242 bytes).
+" (31 pages, 1046949 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 118 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 441 PDF objects out of 1000 (max. 8388607)
+ 122 named destinations out of 1000 (max. 500000)
+ 130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

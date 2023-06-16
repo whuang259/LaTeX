@@ -6,8 +6,8 @@
 \contentsline {subsection}{\numberline {2.4}Hard Topic: Limits for the Morbidly Curious}{18}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Derivatives}{26}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction to Derivatives}{26}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}WTF is a Derivative Anyway?}{29}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}The Chain Rule}{29}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Derivatives of Special Functions}{29}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}It's About the \emph {Implication}}{29}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Hard Topic: Derivatives for the Morbidly Curious}{29}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.2}WTF is a Derivative Anyway?}{31}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Chain Rule}{31}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Derivatives of Special Functions}{31}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}It's About the \emph {Implication}}{31}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Hard Topic: Derivatives for the Morbidly Curious}{31}{subsection.3.6}%
