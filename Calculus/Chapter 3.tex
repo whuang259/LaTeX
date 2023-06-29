@@ -107,16 +107,196 @@ The reason for the numbers being where they are comes from the following
 \[ \dv{x} \qty( \dv{x} \qty( \dv{f}{x} )) = \dv{x} \qty( \dv[2]{f}{x} ) = \dv[3]{f}{x} \]
 Though don't write $\dd^3x^3$ on the bottom, to make sense of this you should think of the entire $\dd x$ as its own block (add invisible parentheses if that makes you feel better).
 
-% higher order derivatives
-% notation
+Having to go through an entire limit to get a derivative is a bit tedious, especially as the functions we consider become more and more complicated. Just like how we can build arbitrary limits out of basic ones, there are rules that let us construct more advanced derivatives from basic ones. 
 
-% constant and power rule
-% linearity
-% product and quotient
+\begin{example}
+	First we need to establish two basic results, one we did earlier and the other can be easily proven
+	\[ \dv{x}(c) = 0 \qquad \dv{x}(x) = 1 \] 
+\end{example}
 
 \newpage 
-\subsection{WTF is a Derivative Anyway?}
-% Derivatives from a graph
+Now we introduce perhaps the most useful derivative rule in calculus:
+
+\begin{theorem}[The Power Rule]
+	For any real number $n \neq 0$, the derivative of the function $f(x) = x^n$ is 
+	\[ f'(x) = n x^{n - 1} \]
+\end{theorem}
+
+It is important to note that this holds for any nonzero exponent, negative numbers and fractions included.
+
+\begin{example}
+	Let's rapid fire run through a bunch of examples, some of which we did using the limit definition earlier and others you will have to take my word that the limit definition gives the same result.
+	\[ \dv{x}(x^2) = 2x \qquad \dv{x}(x^3) = 3x^2 \qquad \dv{x}(\sqrt{x}) = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}} \]
+	\[ \dv{x}(\frac{1}{x}) = \dv{x}(x^{-1}) = x^{-2} = \frac{1}{x^2} \qquad \dv{x}(x^{3/4}) = \frac{3}{4}x^{-1/4} = \frac{3}{4\sqrt[4]{x}} \]
+\end{example}
+
+Another simple but useful rule is the constant rule, essentially stating that you can pull out constant coefficients when computing a derivative.
+\[ \dv{x}(cf(x)) = c \dv{x}(f(x)) = c f'(x) \]
+
+The final piece of the puzzle is the sum rule, using this we can start taking derivatives of basically every polynomial function.
+
+\begin{theorem}[Sum Rule]
+	Let $f(x)$ and $g(x)$ be two differentiable functions, then
+	\[ \dv{x}(f(x) + g(x)) = \dv{f}{x} + \dv{g}{x} = f'(x) + g'(x) \]
+\end{theorem}
+
+To see this in action, we will run through the derivative of a simple polynomial while elaborating every single step we take. In general we won't have to be this verbose, but it is helpful to do so at least once to see how these rules are used.
+
+\begin{example}
+	Consider the function $f(x) = 3x^2 + 2x + 4$, the derivative is
+	\begin{align*}
+		f'(x) &= (3x^2 + 2x + 4)' \\
+		&= (3x^2)' + (2x)' + (4)' \\
+		&= 3 (x^2)' + 2 (x)' + 4(1)' \\
+		&= 3(2x) + 2(1) + 4(0) \\
+		&= 6x + 2
+	\end{align*}
+\end{example}
+
+The sum rule in conjunction with the constant rule means that we can take derivative of subtracted functions as well. The last two operations to complete our collection are multiplication and division.
+
+\begin{theorem}[Product Rule]
+	Let $f(x)$ and $g(x)$ be differentiable functions, then
+	\[ \dv{x}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x) \]
+\end{theorem}
+
+The becomes useful when we have factored polynomials.
+
+\begin{example}
+	Take the derivative of $f(x) = (x^2 + 3)(x^2 - 4x)$. One way is to expand
+	\[ f(x) = x^4 -4x^3 + 3x^2 - 12x \thus f'(x) = 4x^3 - 12x + 6x - 12 \]
+	This is not feasible when the factors get longer, instead we can use the product rule
+	\[ f'(x) = (x^2 +3)'(x^2 - 4x) + (x^2 + 3)(x^2 - 4x)' = (2x)(x^2 - 4x) + (2x)(x^2 - 4x) \]
+\end{example}
+
+You may complain ``wait, we haven't expanded the final result, this doesn't actually stop any algebra from happening." However this answer is just as good because often we are concerned with a single point. Regardless of the form it's in, we can still plug in values to get derivatives at specific points.
+
+\begin{theorem}[Quotient Rule]
+	Let $f(x)$ and $g(x)$ be differentiable functions, then
+	\[ \dv{x}(\frac{f(x)}{g(x)}) = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2} \]
+\end{theorem}
+
+If this seems a bit hard to remember, the standard trick is to repeat to yourself "low d high minus high d low over low squared" which means to take the bottom function times the derivative of the top function and then subtract the top function times the derivative of the bottom function, all divided by the bottom squared. Another way is to just write the product rule on top but with a minus sign.
+
+\begin{example}
+	For a simple example, consider the function
+	\[ f(x) = \frac{x + 1}{x - 1} \]
+	One way is to use product rule, but then we would have to derive $1/(x+1)$ which we cannot do with normal rules, so instead we have to use quotient rule.
+	\[ f'(x) = \frac{(x + 1)'(x - 1) - (x + 1)(x - 1)'}{(x - 1)^2} = \frac{(x - 1) - (x + 1)}{(x - 1)^2} = -\frac{2}{(x - 1)^2}\]
+\end{example}
+
+Let's put everything we've learned together with a more complicated example
+
+\begin{example}
+	Consider the function
+	\[ f(x) = \frac{(2x + 1)(3x^2 + 4x + 2)}{x^2 - 1} \]
+	The derivative is (we'll skip some algebra because you are seasoned derivers now)
+	\begin{align*}
+		f'(x) &= \frac{(2(3x^2 + 4x + 2) + (2x + 1)(6x + 4))(x^2 - 1) - (2x + 1)(3x^2 + 4x + 2)(2x)}{(x^2 - 1)^2} \\
+		&= \frac{(18x^2 + 22x + 8)(x^2 - 1) - (4x^2 + 2x)(3x^2 + 4x + 2)}{(x^2 - 1)^2} \\
+		&= \frac{6x^4 - 26x^2 - 26x - 8}{(x^2 - 1)^2}
+	\end{align*}
+\end{example}
+
+\newpage 
+\subsection{Applications of Derivatives}
+Just like how we can find limits visually from a graph, we can also guess how the derivative of a function looks like by investigating its graph. There isn't a concrete procedure, but the general idea is:
+\begin{itemize}
+	\item If the function is going up, the derivative is positive. Vice versa for going down
+	\item A horizontal tangent means the derivative is zero
+	\item If the rate at which is function is growing is also growing, then the derivative should slope upwards. Similar logic applies to the other four cases.
+\end{itemize}
+
+\begin{example}
+	The function $f(x)$ and $f'(x)$ are shown below
+	\begin{center}
+		\includegraphics[scale=0.75]{images/Figure 3.2.1.png} 
+	\end{center}
+\end{example}
+
+\begin{example}
+	For the function $f(x) = x^2 - 3x$, where is there a horizontal derivative?
+	
+	To answer this question we set the derivative to zero
+	\[ f'(x) = 2x - 3 = 0 \thus x = \frac{3}{2} \]
+	In particular the point $(3/2, 9/4)$ is a horizontal tangent. Observant readers may notice that this is the vertex of the parabola. In fact, the vertex of a quadratic will always have zero derivative.
+\end{example}
+
+We know that the average rate of a change of a function is the quotient
+\[ \frac{f(a + h) - f(a)}{h} \]
+For small values of $h$, we can pretend the function is just a line and estimate
+\[ f'(a) \approx \frac{f(a + h) - f(a)}{h} \thus f(a + h) \approx f(a) + h f'(a) \]
+This technique, known as linear approximation, lets us estimate the function using a known value and its derivative. 
+
+\begin{example}
+	Suppose we have a function $f(x)$ such that
+	\[ f(5) = 10 \qquad f'(5) = 2 \]
+	We can estimate the function at 6 using a linear approximation
+	\[ f(7) \approx f(5) + 2f'(5) = 14 \]
+\end{example}
+
+If this seems a bit abstract, here's something more concrete.
+
+\begin{example}
+	We can use this approximation to estimate square roots. We know that 
+	\[ f(x) = \sqrt{x} \thus f'(x) = \frac{1}{2\sqrt{x}} \]
+	We also know that $\sqrt{4} = 2$, so we can estimate
+	\begin{align*}
+		\sqrt{5} &\approx 2 + \frac{1}{2\sqrt{4}} =  2.25 \text{ vs } 2.24\\
+		\sqrt{6} &\approx 2 + 2 \cdot \frac{1}{2\sqrt{4}} =  2.5 \text{ vs } 2.45 \\
+		\sqrt{7} &\approx 2 + 3 \cdot \frac{1}{2\sqrt{4}} =  2.75 \text{ vs } 2.65 \\
+		\sqrt{8} &\approx 2 + 4 \cdot \frac{1}{2\sqrt{4}} =  3 \\
+	\end{align*}
+	Note that the approximate gets worse the further we are away from our reference point. 
+\end{example}
+
+A linear approximation is an example of a first order Taylor series, we can use the higher order derivatives to refine our approximation in a (much) later chapter.
+
+Newton invented Calculus to provide a rigorous mathematical backing for his laws of motion. We will explore a bit of that here. 
+
+\begin{definition}[Equations of Motion]
+	Suppose the motion (position) of a particle over time is given by the function $x(t)$. Then the velocity of that particle is
+	\[ v(t) = x'(t) \]
+	The absolute value of velocity (i.e. its magnitude) is the particle's speed. The derivative of velocity gives its acceleration
+	\[ a(t) = v'(t) = x''(t) \]
+	The derivative of acceleration, the third derivative of position, is its jerk
+	\[ j(t) = a'(t) = x''(t) = x'''(t) \]
+	The next few higher order derivatives of position are snap, crack, and pop. You do not need to know the derivatives of position past acceleration.
+\end{definition}
+
+\begin{example}
+	Consider a particle which moves according to
+	\[ x(t) = t^3 - t^2 + 25 \]
+	It's velocity and acceleration at a particular time is 
+	\[ v(t) = 3t^2 - 2t \qquad a(t) = 6t - 2 \]
+	From this we see that it is speeding up for $t > 1/3$ and slowing down otherwise. We can also solve
+	\[ v(t) = t(3t - 2) > 0 \thus t < 0, t > 2/3 \]
+	So for $t > 2/3$, the particle is moving forward.
+\end{example}
+
+In biology, particularly ecology, derivatives play a key role in modeling population dynamics. For instance, if the population of a city triples every 5 years and there are 10,000 people in the current year. Then
+\[ P'(0) \approx \frac{P(5) - P(0)}{5 - 0} = \frac{30000 - 10000}{5} = 4000 \]
+If we want to estimate the population in 3 years, then
+\[ P(3) \approx P(0) + 3P'(0) = 10000 + 3 \cdot 4000 = 22000 \]
+
+Population dynamics is more accurately modeled using the exponential function and differential equations, we will return to this example later when you learn what these are.
+
+Derivatives are also used in economics when discuss the behavior of firms or other agents. In certain instances, we can use them to give optimal answers to questions like "How much should I produce of a certain good?" or "How much should I charge for this service?" 
+
+\begin{example}
+	In a monopolistically competitive market, the demand curve faced by a firm is equal to population demand due to market power. If the firm wishes to sell $x$ quantity of some good, then the price is given by
+	\[ p(x) = 100 - x \]
+	In other words, the firm can charge $50$ and sell 50 units or charge $99$ and only sell 1. The revenue is simply price times quantity and the derivative gives what is known as the marginal revenue: the additional revenue gained from selling one more unit.
+	\[ R(x) = x p(x) = 100 x - x^2 \thus MR(x) = R'(x) = 100 - 2x \]
+	Revenue is maximized when $MR = 0$ (you will learn why later), which occurs at exactly 50 goods sold. However this does not actually maximize profits.
+	
+	The cost to produce $x$ units of a good will be impacted by economies of scale. Just like revenue, we can differentiate to get the marginal cost: the cost to produce one more unit
+	\[ C(x) = 16 + x^2 \thus MC(x) = C'(x) = 2x \]
+	Profit in a monopolistic market is achieved when marginal cost equals marginal revenue
+	\[ 100 - 2x = 2x \thus x = 25 \]
+	and we see that the optimal quantity in this market is 25 units.
+\end{example}
+\newpage
 
 \subsection{The Chain Rule}
 \subsection{Derivatives of Special Functions}
