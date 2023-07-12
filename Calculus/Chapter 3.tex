@@ -296,9 +296,79 @@ Derivatives are also used in economics when discuss the behavior of firms or oth
 	\[ 100 - 2x = 2x \thus x = 25 \]
 	and we see that the optimal quantity in this market is 25 units.
 \end{example}
-\newpage
 
+\newpage
 \subsection{The Chain Rule}
+
+\newpage 
 \subsection{Derivatives of Special Functions}
+In this section we give the derivatives of functions not covered by the power rule, for instance trigonometric functions and exponential functions. We will start with the trig functions.
+
+We compute the derivative of sine directly from the limit definition using sum to product identities
+\begin{align*}
+	\dv{x} (\sin x) &= \lim_{h \to 0} \frac{\sin(x + h) - \sin(x)}{h} \\
+	&= \lim_{h \to 0} \frac{2\sin(h/2)\cos(x + h/2)}{h} \\
+	&= \lim_{h \to 0} \frac{\sin(h/2)}{h/2} \cdot \lim_{h \to 0} \cos(x + h/2) \\
+	&= 1 \cdot \lim_{h \to 0} \cos(x + h/2) \\
+	&= \cos(x) \\
+	\dv{x} (\cos x) &= \lim_{h \to 0} \frac{\cos(x + h) - \cos(x)}{h} \\
+	&= \lim_{h \to 0} \frac{-2\sin(h/2)\sin(x + h/2)}{h} \\
+	&= \lim_{h \to 0} \frac{\sin(h/2)}{h/2} \cdot \lim_{h \to 0} -\sin(x + h/2) \\
+	&= 1 \cdot \lim_{h \to 0} -\sin(x + h/2) \\
+	&= -\sin(x) 
+\end{align*}
+
+The derivative of tangent comes from quotient rule
+\begin{align*}
+	\dv{x} (\tan x) &= \dv{x} \qty(\frac{\sin x}{\cos x}) \\
+	&= \frac{(\cos x)(\cos x) - (\sin x)(-\sin x)}{\cos^2 x} \\
+	&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} \\
+	&= \frac{1}{\cos^2 x} = \sec^2 x 
+\end{align*}
+
+Now that we can take derivatives of trig functions, we have a more useful use case of the product rule.
+\begin{example}
+	Consider the function
+	\[ f(x) = x^2 \sin x \]
+	This product cannot simply be expanded, we are forced to use product rule
+	\[ f'(x) = 2x \sin x + x^2 \cos x \]
+\end{example}
+
+Using quotient rule, we can take derivatives of the remaining trig functions. I'll list them here for your convenience:
+\begin{proposition}[Trig Derivatives]
+	\begin{align*}
+		\dv{x} (\sin x) &= \cos x \\
+		\dv{x} (\cos x) &= -\sin x \\
+		\dv{x} (\tan x) &= \frac{1}{\cos^2 x} = \sec^2 x \\
+		\dv{x} (\csc x) &= - \frac{\cos x}{\sin^2 x} = -\csc x \cot x \\
+		\dv{x} (\sec x) &= \frac{\sin x}{\cos^2 x} = \sec x \tan x \\
+		\dv{x} (\cot x) &= -\frac{1}{\sin^2 x} = -\csc^2 x \\
+	\end{align*}
+\end{proposition}
+
+Note that because sine and cosine are related by derivatives, we have the chain
+\[ \sin x \thus \cos x \thus -\sin x \thus -\cos x \thus \sin x \thus \cdots \]
+This is our first example of a function which is both infinitely differentiable and has nontrivial higher order derivatives. Compare this to polynomials, which always end up going to 0 if you take enough derivatives.
+
+\begin{example}
+	Suppose we want to know the equation of the tangent line of the function
+	\[ f(x) = \sin x \cos x \]
+	at the point $x = \pi$. First note that the derivative is
+	\[ f'(x) = (\cos x)(\cos x) + (\sin x)(-\sin x) = \cos^2 x - \sin^2 x = \cos(2x) \]
+	Recall that the derivative gives us the slope of the tangent line, it is $f'(\pi) = 1$. Now all we need is a point. The tangent line touches the function at only one point, that point must be the value of the function at $x = \pi$, which is $f(\pi) = 0$. The easiest way to find the equation is to use point slope form and convert if necessary
+	\[ y - 0 = 1 \cdot (x - \pi) \thus y = x - \pi \]
+\end{example}
+
+\begin{example}
+	A particle undergoing simple harmonic motion (for instance a mass on an ideal spring) has equation
+	\[ x(t) = 5 \cos(t) \]
+	We can use this to find the velocity at any time $t$
+	\[ v(t) = x'(t) = -5 \sin(t) \]
+	The velocity function is also periodic, by looking more closely we see that 
+	\[ v(t) = 0 \iff t = 0, \pi, 2\pi, 3\pi, \cdots \]
+	This is also when the spring is furthest away from the center (at $\pm 5$). The mass actually has zero speed when it reaches it's furthest point and this happens infinitely many times.
+\end{example}
+
+\newpage 
 \subsection{It's About the \emph{Implication}}
 \subsection{Hard Topic: Derivatives for the Morbidly Curious}

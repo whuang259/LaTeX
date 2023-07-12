@@ -8,6 +8,6 @@
 \contentsline {subsection}{\numberline {3.1}Introduction to Derivatives}{26}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Applications of Derivatives}{34}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}The Chain Rule}{38}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Derivatives of Special Functions}{38}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}It's About the \emph {Implication}}{38}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Hard Topic: Derivatives for the Morbidly Curious}{38}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.4}Derivatives of Special Functions}{39}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}It's About the \emph {Implication}}{42}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Hard Topic: Derivatives for the Morbidly Curious}{42}{subsection.3.6}%

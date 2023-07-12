@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  29 JUN 2023 17:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  11 JUL 2023 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,7 +961,14 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: Not enough space on this page on input line 265.
  [35]
 Package mdframed Info: Not enough space on this page on input line 265.
- [36] [37]) [38]
+ [36] [37] [38] [39]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 338.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 347.
+ [40] [41]) [42]
 (D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
 (D:\Documents\TexMaker\Calculus\build\Chapter 2.aux)
 (D:\Documents\TexMaker\Calculus\build\Chapter 3.aux))
@@ -969,9 +976,9 @@ Package rerunfilecheck Info: File `"Calculus Club Notes".out' has not changed.
 (rerunfilecheck)             Checksum: 828C5FCB0150D4EF8919375913446AC0;2290.
  ) 
 Here is how much of TeX's memory you used:
- 14814 strings out of 476331
- 241700 string characters out of 5786821
- 1866660 words of memory out of 5000000
+ 14822 strings out of 476331
+ 241805 string characters out of 5786821
+ 1867660 words of memory out of 5000000
  34821 multiletter control sequences out of 15000+600000
  528143 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1002,9 +1009,9 @@ ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/William/AppData/Local/Programs
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/William/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.pdf
-" (38 pages, 1120060 bytes).
+" (42 pages, 1128657 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 154 named destinations out of 1000 (max. 500000)
  135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
