@@ -299,6 +299,61 @@ Derivatives are also used in economics when discuss the behavior of firms or oth
 
 \newpage
 \subsection{The Chain Rule}
+The only thing stopping us from taking derivatives of any function we encounter is the fact that we don't know how to differentiate compositions of functions. The rule to do so is known as the Chain Rule.
+
+\begin{theorem}[Chain Rule]
+	Let $h(x) = (f \circ g)(x) = f(g(x))$, then the derivative is 
+	\[ h'(x) = f'(g(x)) g'(x) \]
+	In Leibniz notation, this is
+	\[ \dv{h}{x} = \dv{h}{g} \cdot \dv{g}{x} \]
+\end{theorem}
+
+\begin{example}
+	Consider the function
+	\[ h(x) = (x^2 + 1)^2 \]
+	This is a simple application of chain rule, the two functions are
+	\[ f(x) = x^2 \qquad g(x) = x^2 + 1 \]
+	and so the derivative is 
+	\[ h'(x) = 2(x^2 + 1)(2x) = 4x(x^2 + 1) \]
+\end{example}
+
+\begin{example}
+	Consider the function
+	\[ h(x) = \sin(x^3) \]
+	It's pretty obvious what the outer and inner functions are
+	\[ h'(x) = \cos(x^3)(3x^2) = 3x^2 \cos(x^3) \]
+	
+	Now suppose we want the tangent line at $x_0 = \sqrt[3]{\pi}$. First note
+	\[ h(x_0) = \sin(\pi) = 0 \qquad h'(x_0) = 3\sqrt[3]{\pi^2}\cos(\pi) = -3\sqrt[3]{\pi^2} \]
+	Using point-slope form, the tangent line is
+	\[ y - 0 = -3\sqrt[3]{\pi^2}(x - \sqrt[3]{\pi}) \]
+\end{example}
+
+\begin{example}
+	Consider the function
+	\[ h(x) = \frac{1}{x^3 + 5} \]
+	For fractions, it's easy to miss that this is actually a composition of two functions
+	\[ f(x) = \frac{1}{x} = \inv x \qquad g(x) = x^3 + 5 \]
+	and so the derivative is
+	\[ h'(x) = -(x^3 + 5)^{-2}(3x^2) = -\frac{3x^2}{(x^3 + 5)^2}\]
+\end{example}
+
+\begin{example}
+	Consider the function
+	\[ h(x) = \cos(\cos(x^3)) \]
+	This is an example of a nested chain rule, first we decompose
+	\[ f(x) = \cos x \qquad g(x) = \cos(x^3) \]
+	But now we have an issue, $g(x)$ is also a composition of functions
+	\[ g(x) = \alpha(\beta(x)) \qquad \alpha(x) = \cos x \qquad \beta(x) = x^3 \]
+	
+	Starting from the top, recall that the chain rule state
+	\[ h'(x) = f'(g(x)) g'(x) \]
+	we can easily compute $f'(x)$, but we will need to use chain rule again to compute $g'(x)$
+	\[ g'(x) = \alpha'(\beta(x)) \beta'(x) = -\sin(x^3) (3x^2) = -3x^2 \sin(x^3) \]
+	
+	Putting the pieces together, we get
+	\[ h'(x) = -\sin( \cos(x^3)) (-3x^2 \sin(x^3)) = 3x^2 \sin(x^3) \sin(\cos(x^3)) \]
+\end{example}
 
 \newpage 
 \subsection{Derivatives of Special Functions}
