@@ -1,0 +1,100 @@
+\section{Groups and Representations}
+\subsection{Notes}
+
+Before we can discuss Lie algebras, we must discuss groups and their representations.
+
+\begin{definition}[Groups]
+	A group is a set $G$ with a binary operation $\cdot$ such that for any $x, y, z \in G$
+	\begin{itemize}
+		\item $x \cdot y \in G$, that is $G$ is closed under the operation
+		\item There exists an identity element $e$ such that $e \cdot x = x \cdot e = x$
+		\item There exists an inverse $\inv x \in G$ such that $\inv x \cdot x = x \cdot \inv x = e$
+		\item The operation is transitive $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
+	\end{itemize}
+\end{definition}
+	
+\begin{example}
+	The most important example in physics of a group is the permutation group. Suppose we have a set of three elements $\setb{a,b,c}$. Then the identity element is the permutation that does nothing. More complicated permutations are represented using the following notation
+	\[ (12) \thus \text{swap elements 1 and 2} \]
+	\[ (123) \thus \text{move element 1 to position 2, element 2 to position 3, etc.} \]
+	
+	Each closed group of parentheses is called a cycle, because it cycles the positions enclosed. Every permutation can be represented as a set of cycles. The multiplication law is given by concatenation of permutations, that is we apply the rightmost permutation then proceed leftwards, applying permutations as we go. For instance,
+	\[ (12)(23) = (123) \]
+	
+	The permutation group of $n$ elements is denoted $S_n$.
+\end{example}
+
+The group of permutations is an example of a transformation group. In general, the set of reversible transformations on an object has a group structure and the groups they form are very important in physics because they include all possible symmetries of a system.
+
+In quantum mechanics, a transformation is given by a unitary operator in Hilbert space. Thus any transformation group can be mapped onto a set of unitary operators, i.e. for every $x \in G$ there exists an operator $D(x)$ which is unitary. For the mapping to make physical sense, it must preserve any multiplication
+\[ D(x \cdot y) = D(x) D(y) \]
+
+\begin{definition}[Representations]
+	Let $G$ be a group and $V$ a vector space, then a representation of $G$ is a map
+	\[ D: G \to GL(V) \]
+	such that multiplication is preserved
+	\[ D(x \cdot y) = D(x) D(y) \qquad \forall x,y \in G \]
+\end{definition}
+
+\begin{example}
+	Let $G = \z$ be the integers. Then we may represent the additive group with the map
+	\[ D(n) = e^{in\theta} \]
+	for any choice of $\theta \in \re$.
+\end{example}
+
+\begin{example}
+	Consider the permutation group $S_3$ again, we can represent each permutation with a matrix
+	\[ \begin{aligned}
+		D(e) &= \mqty(\imat{3}) \qquad D(12) &= \mqty(0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1) \\
+		D(23) &= \mqty(1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0) \qquad D(13) &= \mqty(0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0) \\
+		D(123) &= \mqty(0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0) \qquad D(132) &= \mqty(0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0)
+	\end{aligned} \]
+\end{example}
+
+Any group can be represented by a map to (possibly infinite dimensional) matrices, so a group really is just a multiplication table. A representation of a group is just a specific way of realizing the multiplication table using matrices. If we have a representation, then we can infer all properties of the group without having to examine the actual elements of the group.
+
+Since a representation is a map from a group to the set of linear transformation, we may choose to either work with linear transformations or their matrix representations. Let $\ket{i}$ be an orthonormal basis on some space and $D(x)$ a linear operator. Then
+\[ [D(g)]_{ij} = \mel{i}{D(g)}{j} \thus D(g) \ket{i} = \sum_{j} \bra{j} \mel{j}{D(g)}{i} = \sum_j \bra{j} [D(g)]_{ji}\]
+This relationship allows us to freely translate between forms.
+
+Two representations are equivalent if they are related by a similarity transform, that is there exists a matrix $S$ such that for all $x \in G$
+\[ D_2(x) = S D_1(x) \inv S \]
+
+We say a representation is reducible if it is equal to a block diagonal representation
+\[ D'(x) = S D(x) \inv S = \mqty(D_1(x) & 0 \\ 0 & D_2(x) ) \]
+This means that the representation space can be split into two orthogonal subspaces which are acted on by $D_1$ and $D_2$ respectively. In this case we say that $D'$ is a direct sum
+\[ D' = D_1 \oplus D_2 \]
+A representation is irreducible if it is not reducible, these are generally the representations we will be interested in. In physics we will assume that all representations are by unitary operators.
+
+\subsection{Exercises}
+
+% 1
+\begin{exercise}
+	Suppose $\inv x = y, z$ where $y \neq z$. Then
+	\[ z = (yx) z = y (xz) = y \]
+	a contradiction, so the inverse must be unique.
+\end{exercise}
+
+% 2 
+\begin{exercise}
+	Consider a three element group $G = \setb{e, x, y}$. The multiplication table is
+	\begin{center}
+	\begin{tabular}{|c|ccc|}
+	\hline 
+	 & e & x & y \\ 
+	\hline 
+	e & e & x & y \\ 
+	x & x & y & e \\ 
+	y & y & e & x \\ 
+	\hline 
+	\end{tabular} 
+	\end{center}
+	This is unique because we cannot have $x \cdot x = e$ since otherwise
+	\[ y = (xx) y = x (xy) \thus xy = y \thus x = e \]
+	a contradiction since the identity is unique, a similar argument shows why $y \cdot y \neq e$. This locks in all possible choices for the table because we must have $x \cdot x = y$. We cannot have repeat entries in a row because that would lead to a contradiction like $x = e$ or $y = e$. 
+\end{exercise}
+
+% 3
+\begin{exercise}
+	The vector $(1,1,1)$ is an eigenvector of every matrix and so its eigenspace will be kept invariant. We can use that vector to construct orthogonal subspaces which are acted on differently by $D$, thus the standard permutation representation is reducible.
+\end{exercise}

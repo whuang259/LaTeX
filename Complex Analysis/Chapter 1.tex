@@ -301,9 +301,51 @@ The first operator simply averages the two equivalent expressions for $f'(z)$ th
 	\[ f'(z) = \pdv{u}{x} - i \pdv{u}{y} = 2\pdv{u}{z} = \pdv{f}{z} \]
 \end{proof}
 
-\newpage 
 \subsection{Power Series}
-tf is a power series
+To motivate our discussion of power series, we can extend the exponential function to the complex numbers using
+\[ e^z = \sum_{n=0}^\infty \frac{z^n}{n!} \]
+and note that it is complex differentiable on any open disc in $\cx$
+\[ (e^z)' = \sum_{n = 0}^\infty n \frac{z^{n-1}}{n!} = \sum_{n' = 0}^\infty \frac{z^{n'}}{n'!} = e^z \]
+
+In contrast, the geometric series
+\[ \sum_{n=0}^\infty = z^n \]
+only converges absolutely on the unit disc $|z| < 1$.
+
+\begin{definition}[Power Series]
+	In general, a power series is a series of the form
+	\[ \sum_{n = 0}^\infty a_n z^n \]
+\end{definition}
+
+We are interested in when a complex power series will converge, so we investigate the related series 
+\[ \sum_{n = 0}^\infty |a_n| |z|^n \]
+First note that, by comparing series, if this series converges absolutely for some $z_0$, then it will converge for every $z$ in the disc $|z| < |z_0|$.
+
+\begin{theorem}
+	For any power series, there exists a (possibly empty) open disc for which it converges absolutely. In other words, there exists an $0 \leq R \leq \infty$ such that the series
+	\[ \sum_{n = 0}^\infty a_n ^zN\]
+	converges absolute for all $|z| < R$ and diverges for all $|z| > R$.
+	
+	In particular, if we define $1/0 = \infty$ and $1/\infty = 0$, then the radius of convergence is given by Hadamard's formula
+	\[ 1/R = \lim \sup |a_n|^{1/n} \]
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\newpage 
+\begin{theorem}
+
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary}
+
+\end{corollary}
+\begin{proof}
+
+\end{proof}
 
 \newpage 
 \subsection{Integration}
@@ -311,7 +353,9 @@ tf is an integral
 
 \newpage 
 \subsection{Exercises}
-
+% ==============================
+% The Complex Plane
+% ==============================
 % 1
 \begin{exercise} \hfill
 	\begin{enumerate}[label=\alph*)]
@@ -344,60 +388,135 @@ tf is an integral
 \end{exercise}
 
 % 3
+\newpage
 \begin{exercise}
-
+	Write $z = re^{i\theta}$, then we are interested in solutions to
+	\[ r^n e^{i n\theta} = s e^{i\phi} \]
+	
+	This either has zero or infinitely many solutions. If there does not exist an $r$ such that $r^n = s$ then there will not be any solutions. Otherwise we simply take some $\theta$ such that $n \theta = \phi$ and we get infinite solutions by adding $2\pi$ to $\theta$. Visually we just spin the points around in a circle, hence infinite solutions.
 \end{exercise}
 
 % 4
 \begin{exercise}
-
+	Suppose $i > 0$, then we have the implications
+	\[ i > 0 \thus i * i = -1 > 0 \thus -1 * i = -i > 0 \thus i * (-i) = 1 > 0 \]
+	But since $-1 > 0$ and $1 > 0$, this implies $-1 + 1 > 0 + 1 \thus 0 > 1$, a contradiction. Thus the complex numbers cannot have a total ordering.
 \end{exercise}
 
 % 5
 \begin{exercise}
-
+	A) Let $\Omega$ be open and path-connected, suppose that $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_1, \Omega_2$ are open and disjoint. Let $w_1 \in \Omega_1, w_2 \in \Omega_2$ and $\gamma$ a curve in $\Omega$ joining the two points. Let $z: [0, 1] \to \Omega$ be a parameterization of this curve with $z(0) = w_1, z(1) = w_2$ and
+	\[ t^* = \sup_{0 \leq t \leq 1} \setb{t : z(s) \in \Omega_1 \quad \text{for all } 0 \leq s < t} \]
+	Consider the point $z(t^*)$, visually this is the point on the curve which lies on the boundary between $\Omega_1$ and $\Omega_2$. 
+	
+	Suppose $z(t^*) \in \Omega_1$. Since $\Omega_1$ is open, there exists an $r > 0$ such that $z(t^*) \in D_r(z(t^*)) \subset \Omega_1$. But then $\gamma \cup D_r(z(t^*))$ is nonempty, in particular there exists a $t' > t^*$ such that $z(t') \in \Omega_1$, a contradiction since $t^*$ is supposed to be an upper bound.
+	
+	Similarly, if $z(t^*) \in \Omega_2$ then since $\Omega_2$ is open, there exists an $r > 0$ such that $z(t^*) \in D_r(z(t^*)) \subset \Omega_2$. By a similar argument this implies that there exists a $t' < t^*$ such that for all $0 < s < t'$ we have $z(s) \in \Omega_1$ i.e. $t^*$ is not the least upper bound. 
+	
+	We have shown that $z(t^*) \in \Omega$ does not lie in either $\Omega_1$ or $\Omega_2$, which is a contradiction since $\Omega = \Omega_1 \cup \Omega_2$. Thus such a decomposition is impossible and $\Omega$ must be connected.
+	
+	B) Now for the converse, suppose $\Omega$ is open and path connected. Let $w \in \Omega$, take $\Omega_1$ to be the set of all points path connected to $w$ by a curve in $\Omega$ and $\Omega_2$ the set of all points not path connected. 
+	
+	First note that since $\Omega$ is open, there exists an open disc around $w$ completely contained with $\Omega$. This also means that the set of points path connected to $w$ is nonempty, since we can take any path within that open disc. Let $w_1 \in \Omega_1$ be any other point. Since $w_1 \in \Omega$, there exists an open disc around it contained with $\Omega$. All the points within that open disc will be path connected to $w_1$ by a similar argument and by extension path connected to $w$. Thus that open disc also lies in $\Omega_1$, proving that it is open.
+	
+	Now take some $w_2 \in \Omega_2$, a point not path connected to $w$. Again, there exists an open disc around it contained completely within $\Omega$. Suppose this disc does not completely lie within $\Omega_2$, for instance there exists some $w' \in D_r(z(t^*)) \cap \Omega_1$. Then we may draw a path from $w$ to $w'$ to $w_2$, a contradiction since $w_2$ is not reachable by any path completely in $\Omega$. Thus that open disc must completely lie in $\Omega_2$ implying it is open.
+	
+	We've now proved that $\Omega = \Omega_1 \cup \Omega_2$ where both sets are open and disjoint. Since $\Omega$ is connected this is impossible so one of the set must be empty. We showed earlier that $\Omega_1$ is nonempty, so we must have $\Omega = \Omega_1$ i.e. it is path connected.
 \end{exercise}
 
 % 6
 \begin{exercise}
-
+	A) Let $\Omega \subset \cx$ be open, $z \in \Omega$ and $C_z$ the set of all points $w \in \Omega$ which are connected to $z$ by a path completely within $\Omega$. We proved earlier that an open set is connected if and only if it is path connected. Since $C_z$ is clearly path connected, we just need to show that it is open. Since any point $w \in C_z$ is also in $\Omega$, there exists an open disc around $w$ contained completely within $\Omega$. All the points within that disc are connected to $w$ and thus to $z$, so the disc is contained completely within $C_z$ as well. Thus $C_z$ is open and connected.
+	
+	$z \in C_z$ is obvious. If $w \in C_z$, then there exists a path from $z$ to $w$ lying completely in $\Omega$. Going backwards yields a path from $w$ to $z$, showing that $z \in C_w$. If $w \in C_z$ and $z \in C_\zeta$, then we have a path from $z$ to $w$ and $\zeta$ to $z$, both of which are contained entirely within $\Omega$. By connecting the paths, we get a path from $\zeta$ to $w$, thus $w \in C_\zeta$.
+	
+	Thus we have an equivalence relation and $C_z$ are the equivalence classes. In particular, the connected components partition $\Omega$ and two components are either disjoint or the same.
+	
+	B) Suppose we have uncountably many distinct connected components. Since each component is open, there exists uncountably many open discs in $\Omega$, each of which contains at least one unique point with rational coordinates. This would seem to imply that there are uncountably many rational numbers, a contradiction.
+	
+	C) A compact set is closed and bounded, thus it is contained within an open disc $D_r(z)$ for sufficiently large $r$ and suitable choice of $z$. The complement of an open disc is connected. Suppose $\Omega$ has two unbounded components, then they must both intersect $D_r(z)^c$, which means they are the same component.
 \end{exercise}
 
+% ==============================
+% Holomorphic Functions
+% ==============================
 % 7
 \begin{exercise}
-
+	A) Let $z, w \in \cx$ such that $\bar zw \neq 1$. 
+	
+	B) Fix some $w \in \D$, the unit disc, and consider the mapping
+	\[ F:\D \to \cx \qquad z \mapsto \frac{w - z}{1 - \bar wz} \]
 \end{exercise}
 
 % 8
 \begin{exercise}
-
+	
 \end{exercise}
 
 % 9
 \begin{exercise}
-
+	We use the conversion equations
+	\[ \begin{cases}
+		x &= r\cos\theta \\
+		y &= r \sin\theta 
+	\end{cases} \]
+	If we write a complex function $f$ as a function in $\real^2$
+	\[ f(z) = f(x + iy) = f\qty(re^{i\theta}) f(r,\theta) = u(r,\theta) + v(r,\theta) i \]
+	then the partial derivatives are
+	\begin{align*}
+		\pdv{u}{r} &= \pdv{u}{x} \pdv{x}{r} + \pdv{u}{y} \pdv{y}{r} = \pdv{u}{x} (\cos\theta) + \pdv{u}{y} (\sin\theta) \\
+		\pdv{v}{r} &= \pdv{v}{x} (\cos\theta) + \pdv{v}{y} (\sin\theta) \\
+		\pdv{u}{\theta} &= \pdv{u}{x} \pdv{x}{\theta} + \pdv{u}{y} \pdv{y}{\theta} = \pdv{u}{x}\, ( -r\sin\theta) + \pdv{u}{y}\, ( r\cos\theta) \\
+		\pdv{v}{\theta} &= \pdv{v}{x}\, ( -r\sin\theta) + \pdv{v}{y}\, ( r\cos\theta)
+	\end{align*}
+	
+	Using the Cauchy-Riemann equations for Cartesian coordinates gives
+	\begin{align*}
+		\pdv{u}{r} &= \pdv{v}{x} (\cos\theta) + \pdv{v}{y} (-\sin\theta) = \frac{1}{r} \pdv{v}{\theta} \\
+		-\pdv{v}{r} &= \pdv{u}{x} ( -\sin\theta) + \pdv{u}{y} (\cos\theta) = \frac{1}{r} \pdv{u}{\theta} 
+	\end{align*}
+	which are the Cauchy-Riemann equations in polar coordinates.
 \end{exercise}
 
 % 10
 \begin{exercise}
-
+	Through a straightforward computation
+	\begin{align*}
+		4 \pdv{z}\pdv{\bar z} = 4 \pdv{\bar z}\pdv{z} &= \qty(\pdv{x} + \frac{1}{i} \pdv{y}) \qty(\pdv{x} - \frac{1}{i} \pdv{y}) \\
+		&= \pdv[2]{}{x} + \frac{1}{i} \pdv{}{y}{x} - \frac{1}{i} \pdv{}{x}{y} + \pdv[2]{}{y} \\
+		&= \pdv[2]{}{x} + \pdv[2]{}{y} = \Delta 
+	\end{align*}
 \end{exercise}
 
 % 11
 \begin{exercise}
-
+	If $f = u + iv$ is holomorphic, then we can use the Cauchy-Riemann equations to write
+	\[ \Delta u = \pdv[2]{u}{x} + \pdv[2]{u}{y} = \pdv{x} \qty(\pdv{v}{y}) + \pdv{y} \qty(-\pdv{v}{x}) = \pdv{v}{x}{y} - \pdv{v}{y}{x} = 0 \]
+	\[ \Delta v = \pdv[2]{v}{x} + \pdv[2]{v}{y} = \pdv{x} \qty(\pdv{u}{y}) + \pdv{y} \qty(-\pdv{u}{x}) = \pdv{u}{x}{y} - \pdv{u}{y}{x} = 0 \]
+	Thus both the real and imaginary components of $f$ are harmonic.
 \end{exercise}
 
 % 12
 \begin{exercise}
-
+	First note that $v(x,y) = 0$, so we just need to show that the partial derivatives vanish at the origin. We hold on of $x$ or $y$ constant when evaluating a partial derivative, since we are evaluating at the origin, this means that the function will vanish. Thus the Cauchy-Riemann equations are satisfied.
+	
+	%% Unfinished
 \end{exercise}
 
 % 13
 \begin{exercise}
-
+	A) If $\Real{f}$ is constant, then
+	\[ \pdv{v}{x} = \pdv{u}{x} = 0 \qquad \pdv{v}{y} = -\pdv{u}{y} = 0 \]
+	So $v$ is also constant and thus so is $f$.
+	
+	B) Now $v$ is constant, the argument is the same as above, just reversed. We'll see that $u$ is constant and thus so if $f$.
+	
+	C) 
 \end{exercise}
 
+% ==============================
+% Power Series
+% ==============================
 % 14
 \begin{exercise}
 
@@ -448,6 +567,9 @@ tf is an integral
 
 \end{exercise}
 
+% ==============================
+% Integration
+% ==============================
 % 24
 \begin{exercise}
 

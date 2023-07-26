@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  17 JUL 2023 20:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.22)  25 JUL 2023 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -968,25 +968,44 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 309.
- [38] [39] [40]
+ [38] [39]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 393.
+(mdframed)              on input line 370.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 402.
- [41] [42])
-[43] (D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
+(mdframed)              on input line 374.
+<images/Figure 3.3.1.png, id=380, 168.63pt x 121.20282pt>
+File: images/Figure 3.3.1.png Graphic file (type png)
+<use images/Figure 3.3.1.png>
+Package pdftex.def Info: images/Figure 3.3.1.png  used on input line 397.
+(pdftex.def)             Requested size: 168.62958pt x 121.20251pt.
+ [40] [41 <./images/Figure 3.3.1.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 428.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 437.
+ [42] [43]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 474.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 483.
+ [44] [45]) [46]
+(D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.aux
 (D:\Documents\TexMaker\Calculus\build\Chapter 2.aux)
 (D:\Documents\TexMaker\Calculus\build\Chapter 3.aux))
 Package rerunfilecheck Info: File `"Calculus Club Notes".out' has not changed.
-(rerunfilecheck)             Checksum: 828C5FCB0150D4EF8919375913446AC0;2290.
+(rerunfilecheck)             Checksum: D58590A3A354200ADA8F11C1CF4BC453;2361.
  ) 
 Here is how much of TeX's memory you used:
- 14828 strings out of 476331
- 241911 string characters out of 5786821
+ 14843 strings out of 476331
+ 242207 string characters out of 5786821
  1867660 words of memory out of 5000000
- 34821 multiletter control sequences out of 15000+600000
+ 34827 multiletter control sequences out of 15000+600000
  528143 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,14n,91p,817b,627s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1014,11 +1033,13 @@ ublic/amsfonts/cm/cmsy8.pfb><C:/Users/William/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/William/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/William/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/William/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
+Users/William/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
 Output written on "D:\Documents\TexMaker\Calculus\build\Calculus Club Notes.pdf
-" (43 pages, 1134203 bytes).
+" (46 pages, 1160016 bytes).
 PDF statistics:
- 528 PDF objects out of 1000 (max. 8388607)
- 160 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 553 PDF objects out of 1000 (max. 8388607)
+ 168 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 

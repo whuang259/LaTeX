@@ -1,0 +1,73 @@
+\RequirePackage{amsmath, amsfonts, amssymb}
+\RequirePackage{physics, tensor}
+\RequirePackage{mathtools, latexsym}
+\RequirePackage{graphicx, parskip}
+
+% ===================
+% Formatting
+% ===================
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{fancyhdr, enumitem} 
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0pt}
+
+% ===================
+% Custom environments
+% ===================
+\RequirePackage{amsthm, thmtools, mdframed, xcolor}
+\mdfsetup{skipabove=\topskip, skipbelow=\topskip}
+\mdfdefinestyle{theoremstyle}{
+	linewidth=1pt,
+	frametitlerule=true,
+	frametitlebackgroundcolor=gray!20,
+	innertopmargin=\topskip
+}
+\mdtheorem[style=theoremstyle]{theorem}{Theorem}[section]
+\mdtheorem[style=theoremstyle]{lemma}[theorem]{Lemma}
+\mdtheorem[style=theoremstyle]{corollary}[theorem]{Corollary}
+\mdtheorem[style=theoremstyle]{proposition}[theorem]{Proposition}
+
+\mdtheorem[style=theoremstyle]{definition}{Definition}[section]
+
+\declaretheoremstyle[
+    spaceabove=12pt,
+    spacebelow=12pt,
+    numbered=no
+]{example}
+\declaretheorem[style=example]{example}
+
+\declaretheoremstyle[
+    spaceabove=12pt,
+    spacebelow=12pt
+]{exercise}
+\declaretheorem[style=exercise]{exercise}
+
+% ======================================================================
+\ProvidesPackage{MathNotes}[Note Macros]
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\cx}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+
+\newcommand{\Real}[1]{\Re\left(#1\right)}
+\newcommand{\Imag}[1]{\Im\left(#1\right)}
+
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\lag}{\mathcal{L}}
+
+\newcommand\setb[1]{\left\{#1\right\}}
+\newcommand{\vbrack}[1]{\left\langle #1 \right\rangle}
+\renewcommand{\vec}[1]{\vectorbold*{#1}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand\inv[1]{{#1}^{-1}}
+
+% Image and Kernel of a function, for imaginary part use Imag for automatic bracing
+\newcommand{\im}{\text{Im }}
+\renewcommand{\ker}{\text{Ker }}
+
+\newcommand{\thus}{\Longrightarrow}

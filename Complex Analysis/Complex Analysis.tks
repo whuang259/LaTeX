@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="3">
-    <document line="40" bookmark1="0" master="false" hasfocus="false" file="D:/Documents/TexMaker/Complex Analysis/MathNotes.sty" bookmark3="0" bookmark2="0"/>
-    <document line="15" bookmark1="0" master="true" hasfocus="false" file="D:/Documents/TexMaker/Complex Analysis/Complex Analysis.tex" bookmark3="0" bookmark2="0"/>
-    <document line="129" bookmark1="0" master="false" hasfocus="true" file="D:/Documents/TexMaker/Complex Analysis/Chapter 1.tex" bookmark3="0" bookmark2="0"/>
+    <document bookmark1="0" master="true" file="D:/Documents/TexMaker/Complex Analysis/Complex Analysis.tex" bookmark2="0" hasfocus="false" line="10" bookmark3="0"/>
+    <document bookmark1="0" master="false" file="D:/Documents/TexMaker/Complex Analysis/MathNotes.sty" bookmark2="0" hasfocus="false" line="51" bookmark3="0"/>
+    <document bookmark1="0" master="false" file="D:/Documents/TexMaker/Complex Analysis/Chapter 1.tex" bookmark2="0" hasfocus="true" line="436" bookmark3="0"/>
 </TexmakerSession>

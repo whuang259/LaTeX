@@ -298,7 +298,7 @@ Derivatives are also used in economics when discuss the behavior of firms or oth
 \end{example}
 
 \newpage
-\subsection{The Chain Rule}
+\subsection{The Chain and Inverse Rules}
 The only thing stopping us from taking derivatives of any function we encounter is the fact that we don't know how to differentiate compositions of functions. The rule to do so is known as the Chain Rule.
 
 \begin{theorem}[Chain Rule]
@@ -344,16 +344,97 @@ The only thing stopping us from taking derivatives of any function we encounter 
 	This is an example of a nested chain rule, first we decompose
 	\[ f(x) = \cos x \qquad g(x) = \cos(x^3) \]
 	But now we have an issue, $g(x)$ is also a composition of functions
-	\[ g(x) = \alpha(\beta(x)) \qquad \alpha(x) = \cos x \qquad \beta(x) = x^3 \]
+	\[ g(x) = j(k(x)) \qquad j(x) = \cos x \qquad k(x) = x^3 \]
 	
 	Starting from the top, recall that the chain rule state
 	\[ h'(x) = f'(g(x)) g'(x) \]
 	we can easily compute $f'(x)$, but we will need to use chain rule again to compute $g'(x)$
-	\[ g'(x) = \alpha'(\beta(x)) \beta'(x) = -\sin(x^3) (3x^2) = -3x^2 \sin(x^3) \]
+	\[ g'(x) = j'(k(x)) k'(x) = -\sin(x^3) (3x^2) = -3x^2 \sin(x^3) \]
 	
 	Putting the pieces together, we get
 	\[ h'(x) = -\sin( \cos(x^3)) (-3x^2 \sin(x^3)) = 3x^2 \sin(x^3) \sin(\cos(x^3)) \]
 \end{example}
+
+A neat application of the chain rule is that it allows us to take derivatives of inverse functions. For a given function $f(x)$, the inverse, denoted $\inv f(x)$ is a function such that
+\[ \inv f(f(x)) = f(\inv f(x)) = x \qquad \forall x \in \re \]
+
+To clean up the notation, suppose $g(x) = \inv f(x)$, then we can use the chain rule to take derivatives of both sides
+\begin{align*}
+	\dv{x} x &= \dv{x} f(g(x)) \\
+	1 &= f'(g(x)) g'(x) \\
+	\therefore g'(x) &= \frac{1}{f'(g(x))} 
+\end{align*}
+
+\newpage 
+If we recall that $g$ is simply the inverse of $f$, we get the following result:
+\begin{theorem}[Inverse Rule]
+	Let $f(x)$ be a function which is invertible and differentiable for all $x$, then
+	\[ \dv{x} \inv f(x) = \frac{1}{f'(\inv f(x))} \]
+	for all $x$ such that $f'(\inv f(x)) \neq 0$.
+\end{theorem}
+
+This is a powerful theorem because it lets us find the derivative of inverse functions without having to calculate them.
+
+\begin{example}
+	Take a simple example, suppose we want the derivative of the inverse of the following function
+	\[ f(x) = \sqrt{x} \]
+	We know how to take the derivative of this using power rule and the inverse is just $x^2$, so
+	\[ \dv{x} \inv f(x) = \frac{1}{f'(\inv f(x))} = \qty(\frac{1}{2\sqrt{x^2}})^{-1} = 2x \]
+	This is the same result as if we were to differentiate $x^2$ directly.
+\end{example}
+
+For an example where you can't simply just solve for the inverse, take the trigonometric functions.
+\begin{example}
+	Suppose we want to differentiate the inverse sin function
+	\[ f(x) = \arcsin(x) \]
+	We can't do much with this without using the inverse derivative rule, which let's us simply write
+	\[ f'(x) = \frac{1}{\cos(\arcsin(x))} \]
+	
+	But where do we go from here? We have to remember that trig functions represent ratios between side lengths of a right triangle. For instance $\sin(x)$ is the ratio between opposite leg and hypotenuse of a right triangle with one angle measuring $x$ radians.
+	
+	When we say that an angle $\theta = \arcsin(x)$, we are saying that for a right triangle with one angle $\theta$ radians, the ratio of the opposite leg and hypotenuse is $x$. We can simplify this by assuming the hypotenuse is of length 1, for instance if we are in the unit circle.
+	\begin{center}
+		\includegraphics[scale=1]{images/Figure 3.3.1.png}
+	\end{center}
+	
+	From this picture, we can see clearly that 
+	\[ \cos(\theta) = \frac{\sqrt{1 - x^2}}{1} = \sqrt{1 - x^2} \]
+	and thus the derivative in question is
+	\[ f'(x) = \dv{x} \arcsin(x) = \frac{1}{\sqrt{1 - x^2}} \]
+	
+	There are two things to notice about this approach. First is our choice of hypotenuse, the fact that we chose it to be 1. This is easy to reconcile, if we chose any other value for the hypotenuse (for instance 2 or 0.5), then the opposite leg would scale accordingly ($2x$ and $0.5x$ respectively). Thus all the possible choices yield similar triangles, which means that $\cos(\theta)$ will be constant across all of them.
+	
+	The second, more interesting, choice was that the legs have positive length. For instance we could have drawn the triangle in the third quadrant and gotten a negative answer. This comes from how we define the inverse trig functions (WARNING: higher level math ahead):
+	
+	An important fact to note about sine (and other trig functions) is that they are period and an unfortunate consequence of this is that they are neither injective (one-to-one) nor surjective (onto). Failing to be injective means that for a given $y$ value, we cannot associate just one $x$ value (\emph{the} inverse) because that are infinitely many such $x$'s. Failing to be surjective means that they are $y$ values which do not have an inverse altogether (for instance $\arcsin(2)$ is undefined because $-1 \leq \sin(x) \leq 1$).
+	
+	In mathematics, we say that the trig functions do a form a bijection from the real numbers to the real numbers. Unfortunately for us, only bijective functions have well defined inverses, so what can we do? Well we can restrict the domain of the inverse to force the function to be bijective. In the case of $\sin(x)$, we take a cut of the function from $-\pi/2$ to $\pi/2$, giving us one full ``branch" which we can invert.
+	
+	This forces $\theta$ to lie in quadrants 1 or 4, meaning that $\cos(\theta)$ will always be positive. This solves the main issue at hand, the other (less important in this context) issue is rectified by only defining $\arcsin(x)$ for $-1 \leq x \leq 1$.
+\end{example}
+
+\newpage 
+\begin{example}
+	The long argument from above is more immediately important for the next example, suppose we have
+	\[ f(x) = \arcsec(x) \]
+	Going through the same motions as before, we get
+	\[ f'(x) = \frac{\cos^2(\arcsec(x))}{\sin(\arcsec(x))} = \frac{x}{x^2\sqrt{x^2 - 1}} \]
+	We may be tempted to cancel out the $x$'s right away, but that is actually incorrect. We have to do the same thing, taking a cut of $\sec(x)$ between 0 and $\pi$ to get one complete ``branch" to invert. For these values of $x$, we will get that $\sin(x) \geq 0$ which forces $f'(x) \geq 0$. Thus when we cancel, we must insert an absolute value to get the correct derivative:
+	\[ f'(x) = \frac{1}{|x|\sqrt{x^2 - 1}}\]
+\end{example}
+
+The remaining inverse trig derivatives are left as an exercise to the reader, but I will list them here for convenience.
+
+\begin{proposition}[Derivatives of Inverse Trig Functions]
+	\begin{align*}
+		\dv{x} \arcsin(x) = \dv{x} \inv\sin(x) &= \frac{1}{\sqrt{1 - x^2}} \\
+		\dv{x} \arccos(x) = \dv{x} \inv\cos(x) &= -\frac{1}{\sqrt{1 - x^2}} \\
+		\dv{x} \arctan(x) = \dv{x} \inv\tan(x) &= \frac{1}{1 + x^2} \\
+		\dv{x} \arccsc(x) = \dv{x} \inv\csc(x) &= -\frac{1}{|x|\sqrt{x^2 - 1}} \\
+		\dv{x} \arcsec(x) = \dv{x} \inv\sec(x) &= \frac{1}{|x|\sqrt{x^2 - 1}} \\
+		\dv{x} \arccot(x) = \dv{x} \inv\cot(x) &= -\frac{1}{1 + x^2} 
+	\end{align*}
+\end{proposition}
 
 \newpage 
 \subsection{Derivatives of Special Functions}
