@@ -9,5 +9,4 @@
 \contentsline {subsection}{\numberline {3.2}Applications of Derivatives}{34}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}The Chain and Inverse Rules}{38}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Derivatives of Special Functions}{43}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}It's About the \emph {Implication}}{46}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Hard Topic: Derivatives for the Morbidly Curious}{46}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.5}Implicit Differentiation}{47}{subsection.3.5}%

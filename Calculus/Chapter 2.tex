@@ -534,7 +534,7 @@ The reason that this is called the triangle inequality is because if you think o
 	\[ \lim_{x \to a} x^2 = a^2 \]
 	
 	Let $\epsilon > 0$, then
-	\[ |x - y| < \delta \thus |x^2 - a^2| = |x - a||x + a| < \delta |x + a| = \epsilon \]
+	\[ |x - a| < \delta \thus |x^2 - a^2| = |x - a||x + a| < \delta |x + a| = \epsilon \]
 	This would imply that we take $\delta = \epsilon / |x + a|$ but that won't do; $\delta$ cannot depend on $x$, only $\epsilon$ and constants. The issue is that we have a bound for $|x - a|$ but not $|x + a|$, we'll have to cleverly work around this. 
 	
 	Suppose that $x$ is ``close enough" to $a$, that is, suppose $\delta < 1$. Then
@@ -651,7 +651,7 @@ The rest of this section will be dedicated to using the $\epsilon-\delta$ techni
 	\[ \lim_{x \to a} \frac{1}{g(x)} = \frac{1}{M} \]
 	
 	Just like before, we first investigate the absolute value
-	\[ \abs{\frac{1}{g(x)} - \frac{1}{M}} = \frac{|g(x) - M}{|g(x)||M|} < \frac{\epsilon_1}{|g(x)||M|} \]
+	\[ \abs{\frac{1}{g(x)} - \frac{1}{M}} = \frac{|g(x) - M|}{|g(x)||M|} < \frac{\epsilon_1}{|g(x)||M|} \]
 	We have already used the fact that the numerator is something that can be arbitrarily bounded, we just need to investigate the $|g(x)|$ in the denominator. Since it's in the denominator we have to impose the additional condition that $g(x) \neq 0$, to do so we simply assume
 	\begin{align*}
 		|g(x) - M| < \frac{|M|}{2} &\thus \frac{M}{2} < g(x) < \frac{3M}{2} \\
